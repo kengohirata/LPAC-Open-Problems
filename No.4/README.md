@@ -10,6 +10,16 @@ Directed unions must not be replaced by arbitrary directed colimits. The book's 
 
 ## Current status — 2026-11-19
 
+> **Summary added 2026-11-20 (Claude Opus 5.5; not human-verified).** Taken together, the results below say that Problem 4 is independent of ZFC, relative to large cardinals:
+>
+> - **ZFC does not prove P4.** §6 of the [counterexample note](nonreflectivity_in_the_first_inaccessible_universe.md) gives a parameter-free definable counterexample in V=L with no inaccessible cardinals, so Con(ZFC) ⇒ Con(ZFC+¬P4).
+> - **ZFC does not prove ¬P4**, assuming the consistency of arbitrarily large measurable cardinals, or of an ω-Erdős cardinal (universe version). With arbitrarily large measurable cardinals, P4 holds ([partition note](partial_maps_partition_bound_and_reflectivity.md)).
+> - **The exact consistency strength is open.**
+>
+> An AI verification pass on 2026-11-20 re-derived the main steps of these three notes and found no errors. Two points were left unchecked: the sufficiency direction of the subtle-cardinal criterion (§7), which relies on the AKNR theorem; and novelty against the literature.
+>
+> Statements further below that Problem 4 "remains unresolved here", that a proper class of measurables is not known to imply P4, or that no V=L⇒¬P4 or independence result is claimed, predate these results and are superseded.
+
 **At the first \(\omega\)-Erdős universe boundary, Problem 4 holds for every locally presentable ambient category.** With \(\theta=\kappa(\omega)\), the failure of a \(V_\theta\)-small solution set would give a sequence of \(\theta\) generated targets over one source with no marked map from an earlier target to a later one. Attaching the tree of finite descending sequences from each index to its partial-map tree gives a forbidden antichain by Eklof–Shelah, Theorem 6. If \(\theta\) exists, the first inaccessible universe and \(V_\theta\) thus give opposite answers while both satisfy (N). The interval from the first subtle cardinal up to, and excluding, \(\theta\) remains undecided by these results. [Endpoint proof and consequences for (N)](reflectivity_at_the_first_omega_erdos_universe.md)
 
 **Problem 4 has a conditional counterexample when small sets belong to \(U=V_\kappa\) for the first uncountable strongly inaccessible \(\kappa\).** In a presheaf category on a finite category, a full replete subcategory is closed under all \(U\)-small limits and ordinary directed unions. The free presheaf on one root has no weak reflection. For each infinite cardinal \(\gamma<\kappa\), a small rooted model distinguishes the first \(\gamma\) rows specified by the root. Every rooted homomorphism preserves these rows, which rules out every proposed weak reflection by taking \(\gamma\) above its size. The actual one-root approximants consequently have sizes unbounded below \(\kappa\). The proof uses external ZFC to specify the \(U\)-large subcategory. Section 6 also gives an internally definable version in \(V=L\) with no strongly inaccessible cardinals. [Construction, closure proofs and universe conventions](nonreflectivity_in_the_first_inaccessible_universe.md)
@@ -50,7 +60,7 @@ More generally, the ordinal codes used in this construction exist exactly when t
 
 The [initial common-factor calculation](ordinal_seed_common_factor_and_the_endpoint_condition.md) reduced the canonical restriction maps to an endpoint condition at \(\delta+1\). Its singleton indicator witnesses failure for the whole first equalizer and is excluded by the second equalizer in the stabilization proof.
 
-**The actual candidate M fails equalizer closure in a reconstructed ZFC proof. Problem 4 itself remains unresolved here.** At κ=(2^c)^+ two maps E(Y_κ)⇉U into an actual M_bfs reduced power agree at every earlier ordinal evaluation and differ at κ. The equalizer omits the endpoint and contains the initial evaluation, so the minimal-hull argument puts it outside M. The bounded cardinals in this construction allow the full argument in ZFC. At the originally specified κ=c^+ every countable list of observations has a separating model, but existence of the full separating map into M_bfs there remains open. The full proof is newly written and has not had an independent audit. [Two cuts and the equalizer obstruction](two_cuts_give_an_actual_m_equalizer_failure.md)
+**The actual candidate M fails equalizer closure in a reconstructed ZFC proof. Problem 4 itself remains unresolved here.** *(Superseded; see "Current status" at the top.)* At κ=(2^c)^+ two maps E(Y_κ)⇉U into an actual M_bfs reduced power agree at every earlier ordinal evaluation and differ at κ. The equalizer omits the endpoint and contains the initial evaluation, so the minimal-hull argument puts it outside M. The bounded cardinals in this construction allow the full argument in ZFC. At the originally specified κ=c^+ every countable list of observations has a separating model, but existence of the full separating map into M_bfs there remains open. The full proof is newly written and has not had an independent audit. [Two cuts and the equalizer obstruction](two_cuts_give_an_actual_m_equalizer_failure.md)
 
 Older entries below describe the investigation before this construction. Their statements that general equalizer closure of M is open are superseded.
 
@@ -177,6 +187,8 @@ This hull bound is not claimed equivalent to reflectivity. The [2026-11-18 conti
 
 ### Limits of the present result
 
+*(Superseded in part: the measurable-cardinal entry below is now established. See "Current status" at the top.)*
+
 The P4 hypotheses have not been shown to imply Σ2 definability, a set-sized axiomatization, or an accessible powerful-image presentation. Therefore none of the following is established for unrestricted P4:
 
     ZFC; a proper class of strong cardinals;
@@ -215,7 +227,7 @@ Main note: [Isbell transport, finitely generated tests, and the equalizer obstru
 - A split-mono omega_1-chain of D-objects has union V∈H_fg admitting no map to D other than the terminal target. The inverse system uses coinfinite partial injections alpha→omega. Hence the proposed shortcut that every H_fg-object embeds in a D-object is false under N, without any diamond or V=L assumption.
 - Closing under ALL subobjects is not a repair: a product- and subobject-closed full subcategory of a presheaf category is epireflective in ZFC.
 
-No N⇒¬P4, V=L⇒¬P4, or P4 independence result is claimed. The exact remaining obligation is the local factorization of a finitely generated map into an equalizer through a D-object while preserving the equality of the two outgoing maps. The obstruction to the current proof is that the intermediate D-object can be arbitrarily large.
+No N⇒¬P4, V=L⇒¬P4, or P4 independence result is claimed. *(Superseded by the 2026-11-19 results; see "Current status" at the top.)* The exact remaining obligation is the local factorization of a finitely generated map into an equalizer through a D-object while preserving the equality of the two outgoing maps. The obstruction to the current proof is that the intermediate D-object can be arbitrarily large.
 
 
 ## 2026-11-17: The proposed V equalizer test is safe
