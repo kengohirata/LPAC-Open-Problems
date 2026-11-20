@@ -31,7 +31,7 @@ $P_n$ denotes a positive answer to Problem $n$. "Known before" lists published r
 
 | No. | Answer | Known before | Claimed in the notes (unverified) |
 |---|---|---|---|
-| 1 | Independent of ZFC | VP $\Rightarrow P_1$ | $\mathrm{ASC}_\infty$, $\Pi_2\text{-}\mathrm{strong}_\infty \Rightarrow P_1 \Rightarrow M_\infty$ |
+| 1 | Independent of ZFC | VP $\Rightarrow P_1$ | $`\mathrm{ASC}_\infty`$, $`\Pi_2\text{-}\mathrm{strong}_\infty \Rightarrow P_1 \Rightarrow M_\infty`$ |
 | 2(a) | Independent of ZFC | VP $\Rightarrow P_{2a} \Rightarrow M_\infty$ | WVP $\Rightarrow P_{2a}$ |
 | 2(b) | Independent of ZFC | VP $\Rightarrow P_{2b}$ | WVP $\Rightarrow P_{2b} \Rightarrow M_\infty$ |
 | 3 | False | — | $\neg P_3$ in ZFC |
@@ -39,23 +39,23 @@ $P_n$ denotes a positive answer to Problem $n$. "Known before" lists published r
 | 5(a) | Equivalent to WVP | $P_{5a} \Leftrightarrow$ WVP (Przeździecki) | — |
 | 5(b) | Equivalent to WVP | WVP $\Rightarrow P_{5b}$ | $P_{5b} \Rightarrow P_{5a}$ (elementary), so $P_{5b} \Leftrightarrow$ WVP |
 | 6 | Equivalent to VP | VP $\Rightarrow P_6 \Rightarrow$ WVP | $P_6 \Rightarrow$ VP |
-| 7 | Independent of ZFC | WVP $\Rightarrow P_7$ (book, Wilson) | $\mathrm{ASC}_\infty \Rightarrow P_7 \Rightarrow M_\infty$ |
+| 7 | Independent of ZFC | WVP $\Rightarrow P_7$ (book, Wilson) | $`\mathrm{ASC}_\infty \Rightarrow P_7 \Rightarrow M_\infty`$ |
 | 8(a) | False | $\neg P_{8a}$ follows from AHS, Rem. 9.26 | — |
 | 8(b) | False | — | $\neg P_{8b}$ in ZFC; CompHaus version $\Leftrightarrow$ VP |
 | 9 | Duplicate of No.5 | authors' errata | — |
 | 10 | Equivalent to WVP | WVP $\Rightarrow P_{10}$ | $P_{10} \Rightarrow$ WVP |
 | 11(a) | True | VP $\Rightarrow P_{11a}$ | $P_{11a}$ in ZFC (directly from the book's Prop. 2.29) |
-| 11(b) | Independent of ZFC | $\mathrm{SC}_\infty \Rightarrow P_{11b} \Rightarrow M_\infty$ | $\mathrm{ASC}_\infty \Rightarrow P_{11b}$ |
+| 11(b) | Independent of ZFC | $`\mathrm{SC}_\infty \Rightarrow P_{11b} \Rightarrow M_\infty`$ | $`\mathrm{ASC}_\infty \Rightarrow P_{11b}`$ |
 | 12 | False | $\neg P_{12}$ (Adámek–Hu–Tholen 1996) | — |
-| 13 | True | VP, $\mathrm{SC}_\infty \Rightarrow P_{13}$ (book; Rosický 1994) | $P_{13}$ in ZFC |
+| 13 | True | VP, $`\mathrm{SC}_\infty \Rightarrow P_{13}`$ (book; Rosický 1994) | $P_{13}$ in ZFC |
 | 14 | Independent of ZFC | — | extendible $\Rightarrow P_{14}$; $\neg P_{14}$ in $L$, $L[A]$ |
 | 15 | Equivalent to "no uncountable measurable cardinal" | $P_{15} \Leftrightarrow$ no uncountable measurable (Adámek–Rosický 1995; AJMR 1997) | — |
 | 16(1) | False | WVP $\not\Rightarrow$ VP (Wilson) | — |
 | 16(2) | False | WVP $\Leftrightarrow$ "Ord is Woodin" (Wilson), so $M_\infty \not\Rightarrow$ WVP | — |
 
 In $A \Rightarrow P_n \Rightarrow B$, the hypothesis $A$ is an upper bound (it gives a positive answer) and $B$ is a lower bound (a positive answer implies it).
-Implications that follow from others in the same row are omitted; for example, WVP $\Rightarrow P_1$ follows from $\Pi_2\text{-}\mathrm{strong}_\infty \Rightarrow P_1$, since WVP implies $\Pi_2\text{-}\mathrm{strong}_\infty$.
-$M_\infty$, $\mathrm{SC}_\infty$, $\mathrm{ASC}_\infty$, $\Pi_2\text{-}\mathrm{strong}_\infty$: a proper class of measurable, strongly compact, almost strongly compact, $\Pi_2$-strong cardinals.
+Implications that follow from others in the same row are omitted; for example, WVP $\Rightarrow P_1$ follows from $`\Pi_2\text{-}\mathrm{strong}_\infty \Rightarrow P_1`$, since WVP implies $`\Pi_2\text{-}\mathrm{strong}_\infty`$.
+$M_\infty$, $`\mathrm{SC}_\infty`$, $`\mathrm{ASC}_\infty`$, $`\Pi_2\text{-}\mathrm{strong}_\infty`$: a proper class of measurable, strongly compact, almost strongly compact, $\Pi_2$-strong cardinals.
 VP = Vopěnka's principle, WVP = weak Vopěnka's principle, LP = locally presentable, AHS = Adámek–Herrlich–Strecker, AJMR = Adámek–Johnstone–Makowsky–Rosický.
 The literature review is incomplete: some items in the last column may already be known, and some may be wrong.
 
@@ -68,7 +68,7 @@ The literature review is incomplete: some items in the last column may already b
 - **AI notes (unverified):** Claim independence from ZFC, with a lower bound of a proper class of measurable cardinals (giving a negative answer in $V=L$ and $L[U]$) and upper bounds of WVP, a proper class of almost strongly compact cardinals, or a proper class of $\Pi_2$-strong cardinals. Exact strength remains open in the notes.
 
 **No.2.** *(Summary)* Is each orthogonality class in the dual of an LP category (a) reflective, or (b) an intersection of two full reflective subcategories? (Test morphisms may form a proper class.) Subcategories are read as replete (closed under isomorphisms). Without this, (b) holds trivially; see [No.2/README.md](No.2/README.md).
-- **Literature:** The book (p. 295) notes that the affirmative answer to (a) lies between VP and $\neg$(M), where (M) says the measurable cardinals form a set: under (M), $\mathbf{Gra}^{op}$ has a non-reflective orthogonality class. So (a) is already known to be independent of ZFC, and "yes under VP" holds for both (a) and (b).
+- **Literature:** The book (p. 295) notes that the affirmative answer to (a) lies between VP and $\neg$(M), where (M) says the measurable cardinals form a set: under (M), $`\mathbf{Gra}^{op}`$ has a non-reflective orthogonality class. So (a) is already known to be independent of ZFC, and "yes under VP" holds for both (a) and (b).
 - **AI notes (unverified):** Address (b), and claim independence from ZFC with a lower bound of a proper class of measurable cardinals (claiming a counterexample when no uncountable measurable cardinal exists) and an upper bound of WVP (obtained by claiming (a) under WVP).
 
 **No.3.** *(Summary)* Can the definition of a locally generated category be stated without co-wellpoweredness? More precisely, is every cocomplete category with a strong generator formed by generated objects LP?
@@ -91,7 +91,7 @@ The literature review is incomplete: some items in the last column may already b
 
   Together, the first two give independence from ZFC relative to large cardinals. The exact strength remains open. The individual notes do not state the independence explicitly; it is summarized in [No.4/README.md](No.4/README.md).
 
-**No.5.** *(Summary)* In $\mathbf{Ab}$: (a) is every full subcategory closed under limits reflective? (b) Is every full subcategory closed under products and split subobjects weakly reflective?
+**No.5.** *(Summary)* In $`\mathbf{Ab}`$: (a) is every full subcategory closed under limits reflective? (b) Is every full subcategory closed under products and split subobjects weakly reflective?
 - **Literature:** Known; both (a) and (b) are equivalent to WVP. Part (a) is Przeździecki's solution to Isbell's problem. Part (b) follows by combining published results (the book's Thm 6.26 and Rem. 6.27, Wilson, and Casacuberta–Gutiérrez–Rosický) with an elementary step.
 - **AI notes (unverified):** Assemble the published results and write out the elementary step for (b).
 
@@ -101,17 +101,17 @@ The literature review is incomplete: some items in the last column may already b
 
 **No.7.** *(Summary)* Is every full subcategory of an LP category closed under products and split subobjects an injectivity class?
 - **Literature:** "Yes under WVP" follows from the book (Thm 6.26, Rem. 6.27) together with Wilson's results.
-- **AI notes (unverified):** Claim independence from ZFC (exact strength open), proposing a lower bound of arbitrarily large measurable cardinals and an upper bound of arbitrarily large almost strongly compact cardinals. The lower bound comes from a counterexample built on $\operatorname{End}(\Omega)$-sets. The $\mathbf{Ab}$ example of No.5(b) only gives a counterexample when there is no uncountable measurable cardinal.
+- **AI notes (unverified):** Claim independence from ZFC (exact strength open), proposing a lower bound of arbitrarily large measurable cardinals and an upper bound of arbitrarily large almost strongly compact cardinals. The lower bound comes from a counterexample built on $`\operatorname{End}(\Omega)`$-sets. The $`\mathbf{Ab}`$ example of No.5(b) only gives a counterexample when there is no uncountable measurable cardinal.
 
-**No.8.** *(Summary)* In $\mathbf{Top}$: (a) is every full subcategory closed under products and directed colimits an injectivity class? (b) Is every full subcategory closed under limits an orthogonality class?
-- **Literature:** Adámek–Herrlich–Strecker, *Abstract and Concrete Categories* (1990), Rem. 9.26, states that every injectivity class containing all connected spaces is all of $\mathbf{Top}$. Since connected spaces are closed under products and directed colimits, (a) is false. Whether this has been stated as an answer to the problem has not been checked. A literature check for (b) is pending.
+**No.8.** *(Summary)* In $`\mathbf{Top}`$: (a) is every full subcategory closed under products and directed colimits an injectivity class? (b) Is every full subcategory closed under limits an orthogonality class?
+- **Literature:** Adámek–Herrlich–Strecker, *Abstract and Concrete Categories* (1990), Rem. 9.26, states that every injectivity class containing all connected spaces is all of $`\mathbf{Top}`$. Since connected spaces are closed under products and directed colimits, (a) is false. Whether this has been stated as an answer to the problem has not been checked. A literature check for (b) is pending.
 - **AI notes (unverified):** Claim (b) is false in ZFC using a construction based on Koubek's stiff spaces, and claim that the restriction of (b) to compact Hausdorff spaces is equivalent to VP.
 
 **No.9.** Duplicate of No.5, as noted in the authors' [errata](https://math.fel.cvut.cz/en/people/adamekj/corrections.pdf) (last line). See [No.5](No.5/).
 
 **No.10.** *(Summary)* In an LP category, is every injectivity class closed under equalizers an orthogonality class?
 - **Literature:** "Yes under WVP" follows from the book's Thm 6.22.
-- **AI notes (unverified):** Claim equivalence to WVP, attempting the converse via Przeździecki's non-reflective orthogonality class in $\mathbf{Ab}$.
+- **AI notes (unverified):** Claim equivalence to WVP, attempting the converse via Przeździecki's non-reflective orthogonality class in $`\mathbf{Ab}`$.
 
 **No.11.** *(Summary)* (a) Is each accessible category co-wellpowered with respect to strong epimorphisms? (b) What is the precise status of the statement "every accessible category is co-wellpowered"?
 - **Literature:** For (a), the book only notes "yes under VP" (Cor. 6.8). For (b), known bounds are a proper class of measurable cardinals from below (the book, Ex. A.19) and a proper class of strongly compact cardinals from above (Makkai–Paré; Bagaria–Casacuberta–Mathias–Rosický).
@@ -134,7 +134,7 @@ The literature review is incomplete: some items in the last column may already b
 - **AI notes (unverified):** Include an unverified attempt at an alternative derivation of the negative direction.
 
 **No.16.** *(Summary)* (1) Is VP equivalent to WVP? (2) Is the existence of arbitrarily large measurable cardinals equivalent to WVP?
-- **Literature:** Known to be no to both questions. (1) is answered in T. M. Wilson, *Weak Vopěnka's Principle does not imply Vopěnka's Principle* (Adv. Math., 2020). (2) is answered in T. M. Wilson, *The large cardinal strength of Weak Vopěnka's Principle* (arXiv:1907.00284), which shows that WVP is equivalent to "$\mathrm{Ord}$ is Woodin".
+- **Literature:** Known to be no to both questions. (1) is answered in T. M. Wilson, *Weak Vopěnka's Principle does not imply Vopěnka's Principle* (Adv. Math., 2020). (2) is answered in T. M. Wilson, *The large cardinal strength of Weak Vopěnka's Principle* (arXiv:1907.00284), which shows that WVP is equivalent to "$`\mathrm{Ord}`$ is Woodin".
 - **AI notes:** None. [No.16](No.16/) only lists the published references.
 
 ## Repository layout
