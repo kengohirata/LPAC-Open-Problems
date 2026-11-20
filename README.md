@@ -123,7 +123,8 @@ The literature review is incomplete: some items in the last column may already b
 
 **No.13.** *(Summary)* Is every complete, axiomatizable category LP? (Here axiomatizable means equivalent to the category of models of a theory in some $L_{\lambda\lambda}$, with all homomorphisms.)
 - **Literature:** The book notes that the answer is yes under VP, and yes under arbitrarily large compact cardinals (Rosický, 1994).
-- **AI notes (unverified):** Attempt a proof in ZFC; the AI notes themselves rate the draft only as "probably correct". An AI cross-check (2026-11-20) found no fatal error. It noted that a key lemma in §4 was only sketched; that lemma is now written out in [No.13/section4_reduced_products_and_ranked_types.md](No.13/section4_reduced_products_and_ranked_types.md). The draft has not been checked by a human.
+- **AI notes (unverified):** Claim a proof in ZFC.
+  - The proof reduces the problem to a statement about presheaf categories: a full subcategory that is closed under limits and axiomatizable in some $L_{\lambda\lambda}$ is closed under $\kappa$-directed colimits for some $\kappa$. No large cardinals, ultrafilters, or compactness are used.
 
 **No.14.** *(Summary)* Find a large accessible category $T$ that has a faithful accessible functor into an arbitrary accessible category.
 - **Literature:** Literature check pending.
