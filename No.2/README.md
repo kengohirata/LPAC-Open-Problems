@@ -22,7 +22,7 @@ Adámek–Rosický, *Locally Presentable and Accessible Categories*, Open Proble
 ## ノートの主張（未検証）
 
 - **否定側。** 非可算可測基数が存在しなければ、(b) の反例がある。
-  - 母圏 \(K_{\mathrm{fs}}\) は、\(M=\operatorname{End}(\omega)\) 作用を持つ集合の平行二射で、第 0 成分が有限台のものからなる。これは前層圏として表示できる。
+  - 母圏 \(K_{\mathrm{fs}}\) は、\(M=\mathrm{End}(\omega)\) 作用を持つ集合の平行二射で、第 0 成分が有限台のものからなる。これは前層圏として表示できる。
   - 一つの正則エピ \(\sigma\) について \(\mathcal A={}^{\perp}\{\sigma\}\) と置く。\(\mathcal A\) を含む full replete coreflective subcategory は、どれも \(\mathcal A\) に属さない対象 \(B\) を含む。
   - 従って \(\mathcal A\) は、そのような部分圏の、いかなる族の交わりにもならない。
   - さらに、基数 \(\rho\) を使う版により、「(b) が肯定的なら、可測基数が真クラス個存在する」ことも主張されている。
