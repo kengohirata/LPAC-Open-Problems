@@ -29,7 +29,7 @@ Pointers to published work, especially where a problem or partial result is alre
 
 $P_n$ denotes a positive answer to Problem $n$. "Known before" lists published results; "Claimed in the notes" lists what the AI-generated notes add, which is unverified.
 
-| No. | Answer | Known before | Claimed in the notes (unverified) |
+| No. | Claimed answer | Known before | Claimed in the notes (unverified) |
 |---|---|---|---|
 | 1 | Independent of ZFC | VP $\Rightarrow P_1$ | $`\mathrm{ASC}_\infty`$, $`\Pi_2\text{-}\mathrm{strong}_\infty \Rightarrow P_1 \Rightarrow M_\infty`$ |
 | 2(a) | Independent of ZFC | VP $\Rightarrow P_{2a} \Rightarrow M_\infty$ | WVP $\Rightarrow P_{2a}$ |
@@ -75,8 +75,8 @@ The literature review is incomplete: some items in the last column may already b
 - **Literature:** Börger–Tholen (1990), Ex. 4.3, is a related construction; a full literature check is pending.
 - **AI notes (unverified):** Claim that the answer is no in ZFC, by a counterexample: a category of ordinal-ranked bi-pointed sets. It is cocomplete and has a generated strong generator, but its initial object has a proper class of strong quotients.
   - The counterexample contradicts a density step on p. 296 of the book. The notes therefore labelled it only a candidate.
-  - An AI cross-check (2026-11-20) confirmed the counterexample and located the error in that step of the book.
-  - If this is right, the book's remark that the answer is yes under VP (p. 295) also fails for the literal statement.
+  - A second AI-generated analysis (2026-11-20) supports the proposed counterexample and identifies a possible gap in the book's argument at that step; neither has been independently verified.
+  - If both are right, the book's remark that the answer is yes under VP (p. 295) also fails for the literal statement.
   - The reformulation on p. 296 in terms of reflective subcategories is not refuted; under VP it is true.
   - The notes also give positive answers in some definable special cases.
 

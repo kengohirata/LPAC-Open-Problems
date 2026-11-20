@@ -1,21 +1,21 @@
 # Open Problem 3 — Removing co-wellpoweredness from locally generated categories
 
-> **Current status — 2026-11-20 (summary added by Claude Opus 5.5; not human-verified).** The ordinal-rank candidate is a ZFC counterexample to Problem 3 as literally stated. So the answer is **no**: a cocomplete category with a strong generator formed by generated objects need not be locally presentable.
+> **Current status — 2026-11-20 (summary added by Claude Opus 5.5; not human-verified).** The notes claim that the ordinal-rank candidate is a ZFC counterexample to Problem 3 as literally stated, so that the answer would be **no**: a cocomplete category with a strong generator formed by generated objects need not be locally presentable. A second AI-generated analysis supports this; neither has been independently verified.
 >
 > - **The category:** ordinal-ranked bi-pointed sets ([details](ordinal_rank_candidate_and_boundedness_conflict_2026-11-17.md)).
-> - **The four required properties hold**, each checked against the book's definitions:
+> - **The four required properties**, as claimed in the notes and compared with the book's definitions:
 >   1. cocompleteness;
 >   2. the single object G is a strong generator;
 >   3. G is ℵ₀-generated in the sense of Def. 1.67;
 >   4. the initial object has a proper class of strong quotients, so the category is not locally presentable (Thm 1.58).
-> - **Re-derivation:** an AI cross-check on 2026-11-20 re-derived all four properties and found no misreading of the definitions. It also recomputed the non-monic comparison at X_(ω+1). Finite cases were checked by exhaustive computation.
-> - **The conflict with the book:** the "unresolved source conflict" below is the counterexample's disagreement with the book's density step on p.296. The cross-check located the error in that step. Theorem 1.11 and Prop. 1.22 use presentability, and the book replaces it by generatedness, but the transition maps of the canonical diagram are not monic.
-> - **Consequences, if correct:**
+> - **AI re-derivation:** a second AI analysis on 2026-11-20 re-derived all four properties and found no misreading of the definitions. It also recomputed the non-monic comparison at X_(ω+1). Finite cases were checked by exhaustive computation.
+> - **The conflict with the book:** the "unresolved source conflict" below is the counterexample's disagreement with the book's density step on p.296. The second AI analysis identifies a possible gap in that step: Theorem 1.11 and Prop. 1.22 use presentability, and the book replaces it by generatedness, but the transition maps of the canonical diagram are not monic.
+> - **Consequences, if both are correct:**
 >   - The book's remark on p.295 that the answer is positive under VP fails for the literal statement. So does its repetition in the 2018 introduction.
 >   - The reformulation on p.296 in terms of full reflective subcategories is **not** equivalent to the literal statement. It is not refuted by this example and is true under VP.
 > - **Still open:** novelty against the literature, including the relation to Börger–Tholen Ex. 4.3 and the Di Liberti–Rosický density step, has not been checked.
 >
-> Statements below that the candidate is unresolved, or that no ZFC negative answer is concluded, are superseded by this summary.
+> Statements below that the candidate is unresolved, or that no ZFC negative answer is concluded, predate this summary.
 
 ## Current dependency warning — 2026-11-17
 
@@ -247,7 +247,7 @@ anything about Problem 3 without checking all hypotheses.
 
 詳細：`ordinal_rank_candidate_and_boundedness_conflict_2026-11-17.md`。
 
-**状態：CANDIDATE_WITH_UNRESOLVED_SOURCE_CONFLICT。No.3 の解決・ZFC 否定・独立性の確定とは扱わない。** *（2026-11-20 追記：AI による検証で候補は字義どおりの No.3 の ZFC 反例と判定され、衝突の原因は原著 p.296 の稠密性のステップにあるとされた。冒頭の「Current status — 2026-11-20」を参照。）*
+**状態：CANDIDATE_WITH_UNRESOLVED_SOURCE_CONFLICT。No.3 の解決・ZFC 否定・独立性の確定とは扱わない。** *（2026-11-20 追記：別の AI による解析は、候補が字義どおりの No.3 の ZFC 反例であることを支持し、原著 p.296 の稠密性のステップに穴がある可能性を指摘した。いずれも独立な検証は経ていない。冒頭の「Current status — 2026-11-20」を参照。）*
 
 - 任意長の K_Gamma を別々に作る方法から、一つの圏の対象に ordinal rank を持たせる方法を試した。対象は二点を区別した集合と順序数、または infinity-rank の一点付き集合。rank が上がる射は二つの区別された点を同一視する。
 - 一つの rank-0 三元対象 G の Hom が忘却関手 U と自然同型になる。U が faithful/conservative、mono が underlying injection と一致する、従って mono 図式は rank 一定になる、という計算を得た。
