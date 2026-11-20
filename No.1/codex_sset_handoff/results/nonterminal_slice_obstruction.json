@@ -1,0 +1,57 @@
+{
+  "ambient": "Arr(Set), ordinary unique lifting",
+  "U": [
+    0,
+    1,
+    []
+  ],
+  "V": [
+    1,
+    2,
+    [
+      0
+    ]
+  ],
+  "B": [
+    1,
+    1,
+    [
+      0
+    ]
+  ],
+  "C": [
+    0,
+    1,
+    []
+  ],
+  "s": [
+    [],
+    [
+      0
+    ]
+  ],
+  "r": [
+    [],
+    [
+      0
+    ]
+  ],
+  "Hom_B_V_count": 1,
+  "Hom_C_U_count": 1,
+  "Hom_C_V_count": 2,
+  "old_colouring": [
+    [],
+    [
+      0
+    ]
+  ],
+  "old_lift_count": 1,
+  "new_colouring": [
+    [],
+    [
+      1
+    ]
+  ],
+  "new_lift_count": 0,
+  "boundary": "Finite assembly obstruction; not a counterexample to P."
+}

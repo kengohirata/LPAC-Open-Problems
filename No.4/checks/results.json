@@ -1,0 +1,25 @@
+{
+  "scope": "Finite algebraic sanity checks only; no infinite theorem verified.",
+  "checks": [
+    {
+      "omega_size": 2,
+      "transformation_monoid_size": 4,
+      "equivariant_unary_operations": 1,
+      "equivariant_binary_operations": 2,
+      "binary_operations_are_exactly_projections": true,
+      "dual_equalizer_is_exactly_constant_functions": true,
+      "dual_equalizer_size": 2,
+      "diagonal_and_projection_factorizations_verified": true
+    },
+    {
+      "omega_size": 3,
+      "transformation_monoid_size": 27,
+      "equivariant_unary_operations": 1,
+      "equivariant_binary_operations": 2,
+      "binary_operations_are_exactly_projections": true,
+      "dual_equalizer_is_exactly_constant_functions": true,
+      "dual_equalizer_size": 3,
+      "diagonal_and_projection_factorizations_verified": true
+    }
+  ]
+}

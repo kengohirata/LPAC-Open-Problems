@@ -1,0 +1,215 @@
+{
+  "omega_size": 3,
+  "monoid_size": 27,
+  "cofree_equivariance_checks": 2187,
+  "point_detector_supports": [
+    {
+      "a": [
+        0,
+        0
+      ],
+      "minimal_support": [
+        0
+      ]
+    },
+    {
+      "a": [
+        0,
+        1
+      ],
+      "minimal_support": [
+        0,
+        1
+      ]
+    },
+    {
+      "a": [
+        0,
+        2
+      ],
+      "minimal_support": [
+        0,
+        2
+      ]
+    },
+    {
+      "a": [
+        1,
+        0
+      ],
+      "minimal_support": [
+        0,
+        1
+      ]
+    },
+    {
+      "a": [
+        1,
+        1
+      ],
+      "minimal_support": [
+        1
+      ]
+    },
+    {
+      "a": [
+        1,
+        2
+      ],
+      "minimal_support": [
+        1,
+        2
+      ]
+    },
+    {
+      "a": [
+        2,
+        0
+      ],
+      "minimal_support": [
+        0,
+        2
+      ]
+    },
+    {
+      "a": [
+        2,
+        1
+      ],
+      "minimal_support": [
+        1,
+        2
+      ]
+    },
+    {
+      "a": [
+        2,
+        2
+      ],
+      "minimal_support": [
+        2
+      ]
+    }
+  ],
+  "finite_power_Hom_counts": [
+    {
+      "power": 0,
+      "Hom_to_Omega": 0
+    },
+    {
+      "power": 1,
+      "Hom_to_Omega": 1
+    },
+    {
+      "power": 2,
+      "Hom_to_Omega": 2
+    },
+    {
+      "power": 3,
+      "Hom_to_Omega": 3
+    }
+  ],
+  "sigma_Hom_counts": [
+    {
+      "X_size": 1,
+      "Hom_to_source": 1,
+      "Hom_to_target": 1,
+      "bijective": true
+    },
+    {
+      "X_size": 2,
+      "Hom_to_source": 2,
+      "Hom_to_target": 2,
+      "bijective": true
+    },
+    {
+      "X_size": 3,
+      "Hom_to_source": 3,
+      "Hom_to_target": 3,
+      "bijective": true
+    }
+  ],
+  "finite_dynamical_factorizations": [
+    {
+      "X_size": 1,
+      "T_size": 1,
+      "pointed_semiconjugacies": 1
+    },
+    {
+      "X_size": 1,
+      "T_size": 2,
+      "pointed_semiconjugacies": 8
+    },
+    {
+      "X_size": 1,
+      "T_size": 3,
+      "pointed_semiconjugacies": 81
+    },
+    {
+      "X_size": 1,
+      "T_size": 4,
+      "pointed_semiconjugacies": 1024
+    },
+    {
+      "X_size": 2,
+      "T_size": 1,
+      "pointed_semiconjugacies": 0
+    },
+    {
+      "X_size": 2,
+      "T_size": 2,
+      "pointed_semiconjugacies": 2
+    },
+    {
+      "X_size": 2,
+      "T_size": 3,
+      "pointed_semiconjugacies": 30
+    },
+    {
+      "X_size": 2,
+      "T_size": 4,
+      "pointed_semiconjugacies": 528
+    },
+    {
+      "X_size": 3,
+      "T_size": 1,
+      "pointed_semiconjugacies": 0
+    },
+    {
+      "X_size": 3,
+      "T_size": 2,
+      "pointed_semiconjugacies": 0
+    },
+    {
+      "X_size": 3,
+      "T_size": 3,
+      "pointed_semiconjugacies": 6
+    },
+    {
+      "X_size": 3,
+      "T_size": 4,
+      "pointed_semiconjugacies": 144
+    },
+    {
+      "X_size": 4,
+      "T_size": 1,
+      "pointed_semiconjugacies": 0
+    },
+    {
+      "X_size": 4,
+      "T_size": 2,
+      "pointed_semiconjugacies": 0
+    },
+    {
+      "X_size": 4,
+      "T_size": 3,
+      "pointed_semiconjugacies": 0
+    },
+    {
+      "X_size": 4,
+      "T_size": 4,
+      "pointed_semiconjugacies": 24
+    }
+  ],
+  "boundary": "Finite algebraic checks only; the infinite conditional theorem is proved separately in the research note."
+}

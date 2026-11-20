@@ -1,0 +1,528 @@
+# Active research handoff — 2026-11-18
+
+**At the first \(\omega\)-Erdős universe boundary, Problem 4 holds for every locally presentable ambient category.** With \(\theta=\kappa(\omega)\), the failure of a \(V_\theta\)-small solution set would give a sequence of \(\theta\) generated targets over one source with no marked map from an earlier target to a later one. Attaching the tree of finite descending sequences from each index to its partial-map tree gives a forbidden antichain by Eklof–Shelah, Theorem 6. If \(\theta\) exists, the first inaccessible universe and \(V_\theta\) thus give opposite answers while both satisfy (N). The interval from the first subtle cardinal up to, and excluding, \(\theta\) remains undecided by these results. [Endpoint proof and consequences for (N)](reflectivity_at_the_first_omega_erdos_universe.md)
+
+**2026-11-19. Conditional counterexample in the first inaccessible universe.** Take \(U=V_\kappa\), where \(\kappa\) is the first uncountable strongly inaccessible. A single free root in a finite presheaf signature has no weak reflection into a full subcategory closed under all \(U\)-small limits and ordinary directed unions. In small models \(B_\gamma\), initial segments of length \(\gamma\) of the named rows are pairwise distinct. Every rooted map preserves every named row. These models force sizes cofinal in \(\kappa\) in the actual one-root approximants. The subcategory is specified in external ZFC. An internally definable variant works in \(V=L\) with no inaccessibles. [Full proof and precise size conventions](nonreflectivity_in_the_first_inaccessible_universe.md)
+
+Section 7 identifies the exact condition on this coding argument at any strongly inaccessible universe boundary \(\kappa\). The codes exist if and only if no cardinal \(\le\kappa\) is subtle. Necessity follows by coding the two subsets and the finite color into a single subset on a club. Sufficiency uses the binary-tree theorem of Adámek, Koubek, Nelson and Reiterman.
+
+The entries below record earlier stages of the investigation, including the fixed Isbell source, the bounded-choice theorem and previous tests on actual universal approximations.
+
+**2026-11-19. The countable-fragment test has an explicit example in ZFC.** A canonical comparison \(N\to M\) on one free root splits over the inclusion of every proper rooted subpresheaf of \(M\). The whole \(M\) has no rooted map to \(N\). In \(M\) each test of one distinguished point reads zero. Its local image in \(N\) must be a nonempty subset of the binary sequences avoiding all the tested indices. The whole diagram tests every index. Against fragments of size at most \(\mu<\mathfrak c\), the least number of candidate images needed at that point is \(\mu^+\) for infinite \(\mu\). The first example stabilizes at \(2^{\mathfrak c}\). [Explicit comparison and exact candidate bound](countable_fragments_split_a_canonical_comparison.md)
+
+**One tower repeats this for all countable ordinal levels.** Distinct binary sequences label the levels in a single finite graph. At level \(\xi\) the available columns are binary sequences and the rows from all earlier levels. This realizes strict comparisons requiring fragments of size \(\beth_{1+\xi}\) along one tower, including at nonzero limit levels. Every countable depth misses a strict comparison, and the least common ordinal bound on the necessary depths is \(\omega_1\). The tower first stabilizes at \(\beth_{\omega_1}\), after the prescribed set of levels has appeared. The open issue is persistence past every set-sized bound for one fixed subcategory and source. [Closure, actual stages, and ordinal-depth proof](one_root_with_uncountably_many_locally_split_comparisons.md)
+
+**2026-11-19. Bounded choices for each point suffice.** Section 7 proves that functions admitting representatives with at most \(\mu\) values form an actual subcategory object in every \(\mu^+\)-complete reduced power of a subcategory object, provided \(\mu^{<\lambda}=\mu\). The proof takes a directed union of powers indexed by the positive cells of partitions. It follows that marked maps on fragments of size at most \(\mu\) yield a global marked map as soon as every point can be given its own list of at most \(\mu\) candidate images and the local maps respect all lists. The choices on different fragments may disagree on overlaps. The next positive step is to obtain these lists for the actual comparison lifts, where the old projection is fixed and values can be chosen in the eventual image. Every strict comparison on the stabilized tail forces arbitrarily far refinements to use more than \(\mu\) values at one fixed point for every attempted choice. [Local-to-global theorem and tower application](embeddability_of_reduced_powers_and_uniform_hulls.md)
+
+**2026-11-19. The fixed-source diagonal test in ZFC.** Choose a fragment size \(\mu\). For each stage take its own reduced power indexed by its marked subpresheaves of size at most \(\mu\), using the filter generated by their upper cones. The tower stabilizes exactly when some \(\mu\) eventually permits homomorphisms to subcategory objects separating each pair of distinct diagonal points. Failure for every \(\mu\) forces pairs from the eventual image with the same projection to any chosen earlier stage. Every small fragment containing such a pair maps back to the original stage with both values prescribed. The unresolved step is extending enough local separations to the whole reduced power. The step works on any small groupoid by choosing maps on its disjoint orbits. Globally, a uniform bound on small hulls is equivalent to sufficiently directed union closure of the class of embeddable presheaves. It is also equivalent to the existence of one cardinal bounding how many of the original premises are needed in each valid implication between equations. A failure at fixed \(X,S\) supplies such irreducible implications from the actual stage diagrams. [Proofs and precise quantifiers](embeddability_of_reduced_powers_and_uniform_hulls.md)
+
+**2026-11-19. Uniform comparison depth in ZFC.** For each level take the eventual pointwise image of all sufficiently late levels. A countable inverse limit proves that bounded sizes of these images suffice to stabilize the original tower, even though an individual image need not be known to belong to the subcategory. Given a prior level and a size bound, all marked fragments of that size eventually lift while keeping their projection to that prior level. In a strict comparison on that tail, one point necessarily has competing lifts on every such fragment. Maps to all algebraically compact test objects factor uniquely through one common stage. This proves reflectivity for a proper class of compact generators together with a set of arbitrary exceptions. A separate argument gives depth one for every finite marked tuple in the unary endomorphism presheaf category. [Proofs and size bounds](stable_images_compact_targets_and_comparison_depth.md)
+
+The [canonical depth-two example](a_canonical_comparison_of_exact_depth_two.md) uses one free root in a countable signature. The small approximant identifies the two values distinguished by the large one. Every finitely generated fragment of the small approximant lifts, but choosing an image for its distinguished witness exposes a second-round obstruction. Any argument using compact tests alone has to account for strict comparisons of this kind. The outstanding general question is whether a set-sized bound on the fragments needed to determine individual images can be obtained from the common source and the older projections.
+
+**2026-11-19. A conditional general bound on marked hulls.** The [partial-map proof](partial_maps_partition_bound_and_reflectivity.md) constructs a genuine marked morphism from a family of partial assignments that can extend every previous assignment over any further block of size \(<\lambda\). This works in ZFC by a \(\lambda\)-directed union of powers. Trees for two different points in the same generated hull must therefore be incomparable. Shelah's labeled-tree theorem bounds every such hull in a fixed presentation by a cardinal with the specified partition relation. In particular a measurable above the size of the presentation suffices for an arbitrary full limit- and directed-union-closed subcategory of that ambient, and a proper class of measurables suffices for the full question. In ZFC, each point is isolated in its own hull by a positive infinitary formula over the marks. The next general question is whether the depths needed along one canonical tower can be bounded by a set ordinal, using the actual comparison maps or the common source. A family of abstract trees of large width does not establish failure for such a tower.
+
+**General theorem for set-sized generation.** In a presheaf category, close a set of objects under all small limits and \(\lambda\)-directed unions for a fixed regular infinite \(\lambda\). Every subobject generated inside this closure by fewer than \(\lambda\) elements is separated by maps to the original generators. This bounds those subobjects uniformly and gives a reflection for every source. A cofinal pointed-type argument also gives an explicit rank of filtered-colimit closure and local presentability. Restricted Yoneda transfers the theorem to every locally \(\lambda\)-presentable ambient using \(\lambda\)-directed unions, including ordinary directed unions for locally finitely presentable ambients. For an arbitrary admissible class \(\mathcal A\) in the presheaf representation, the subcategories generated by its objects of size at most \(\kappa\) are therefore reflective at all sources. The union over cardinals is \(\mathcal A\) as a class. Whether the reflectors stabilize at each fixed source is open. [Proof and general decomposition](set_generated_limit_and_union_closures_are_reflective.md)
+
+**What a nonstabilizing tower would require.** Each canonical approximation to \(X\) is a genuine directed union of the subobjects generated by small tuples from \(X\). Failure of reflection forces one fixed tuple to have unbounded such subobjects. If the small free source on the tuple reflects, a single reflected source has a coherent inverse system of strong quotients, unbounded in size, with one stable kernel pair. None of the tail quotient maps can be the coequalizer of that pair. The cyclic group nerves give noneffective local quotient maps even when reflection exists, and an infinite refining chain across different examples. They do not give an unbounded tower at a single source. A positive case covers sources whose small tuples can be fixed by endomorphisms through sources already known to reflect. The current gap is the unrestricted small-free-source case and the possible proper-class refinement at fixed kernel. Both new notes have been checked directly and await independent or formal review. [Local obstruction and positive criterion](general_approximants_local_hulls_and_fixed_kernels.md)
+
+**Continuous successors.** The least full replete small-limit and directed-union closure generated by the \(E(Y)\) with continuous \(d_Y\) admits a reflection of \(X\) in ZFC. An explicit common factor uses continuous first-sort functions and arbitrary second-sort functions on \(\beta\mathbb N\). Its least subobject containing the seed in this closure supplies uniqueness after both closure operations. This covers the earlier two-limit target. For any rooted \(Y\in C\), even with discontinuities, the seed factors through this particular reflection exactly when the orbit closure is invariant and its restricted successor is continuous. The seed at zero in \(Y_{\omega+1}\) fails this test. [Proof and exact criterion](continuous_successor_stone_cech_reflection_at_x.md)
+
+**Extensions.** A separate set of pointed separable compact models gives a reflection of \(X\) when each generator has at most countably many successor discontinuities. The second extension admits any generator in which each root is contained in a separable compact invariant subspace or has a continuous successor-preserving ordinal parametrization with fixed endpoint. It reuses the relative two-cut equalizers and verifies their membership in the smaller closure. A mixed successor on \([0,\omega_1]\times\{0,1\}\) exhibits the boundary of these two root conditions. Reflectivity at \(X\) for the full \(\mathcal A\) and the general problem remain open. The two notes have been checked directly and await independent or formal review. [Discontinuous and ordinal extensions](continuous_reflection_extension_to_discontinuous_orbits.md)
+
+The [identity-trace test](identity_trace_has_no_scalar_extension_and_two_limit_target.md) rejects the enlarged hull \(R\) in ZFC. Word indicators jointly determine any additional element for a single seed in \(\mathcal A\), so every set function of its orbit word is available naturally. A free-ultrafilter limit gives a balanced scalar obstruction. On the actual two-limit target the second-sort identity word separates the even and odd lifts, while \(R\) equates them on that word. This supersedes the universality question for this particular \(R\) in the previous entry.
+
+The [two-cycle calculation](two_cycle_does_not_receive_the_ordinal_seed_hull.md) gives \(\mathcal P(H_\delta,E(T_{\rm cyc}))=\varnothing\) in ZFC. All \(\mathcal A\)-objects admit a natural first-mismatch operation on a seed's iterates. It transfers the omission of any specified first-sort trace along maps from seeded subobjects of full powers. A joint seed hull in \(H_\delta\times E(P)\), with \(P\) the finite-image sequence shift, now factors the ordinal initial seeds and all seeds with finite-range second traces. Its universality for arbitrary rooted \(Y\in C\) remains open. The proof has been checked directly; independent review and formal verification are outstanding.
+
+The [common factor in the least closure for the ordinal family](ordinal_hulls_stabilize_via_a_relative_two_cut_test.md) gives the canonical endpoint condition on \(H_\delta\), even on all finite-range histories. The ordinal hulls stabilize from \(\delta\) on whenever the target is in \(\mathcal A\).
+
+The [explicit ZFC refutation of the original (EQ_C)](two_cuts_refute_eq_c_and_escape_nonmonic_factorization.md) puts the first two-cut equalizer in the least limit-and-union closure \(\mathcal A\) and outside even \(H_{\rm fg}\). The [endpoint calculation](ordinal_seed_common_factor_and_the_endpoint_condition.md) explains why the first equalizer itself fails the canonical endpoint condition.
+
+The latest proof is [two cuts give an actual M-equalizer failure](two_cuts_give_an_actual_m_equalizer_failure.md). At κ=(2^c)^+ the fixed countable template has T0=ω² and T1 a quotient of ω⁵, with only the first and fifth projections descending. Agreement of the observation tables at two cut ordinals makes each second-sort function descend on a filter-large set, giving a genuine map to a c^+-complete reduced power in M_bfs. Its endpoint splits from ω. The two-map equalizer is outside M in ZFC by the local finite-powerset bound on all prospective dual witnesses. This rejects the actual M candidate; it does not solve P4. At κ=c^+, every countable observation fragment has a separating countable model, while a c-coloring and a balanced selector rule out postprocessing this particular assembled map into M. The existence question at that exact cardinal remains open. The new proof has not undergone independent or formal verification.
+
+## Archived status of the Isbell construction
+
+### Latest checkpoint: actual characterful repair and the c^+ endpoint
+
+At this checkpoint several new proofs and counterexamples to intermediate
+principles had been recorded. The Isbell construction had not produced a No.4 counterexample.
+
+**Characterful C-surjectivity can now actually be repaired in one step.**
+small_character_sources_admit_one_step_c_quotient_repair_2026-11-18.md:
+if Y∈C and |H(Y0)|≤c, then Eq(EY⇉Z∈M)∈M, with no carrier bound and
+no FS restriction on Y1. Finite witness dual bounds c,2^c, ambient2^(2^c).
+Let L={h∈H Y0:a0h=b0h} (all common characters). Add L to first seed
+observations. Initial first type≤c; continuous evaluation profiles on
+compact X=H Y0 of cardinal≤c also≤c, so resultingQ0≤c. Eachtypefiber
+is≤c intersection and arbitrarysubset≤c union, so firstwholepower is
+equalized. Therefore H Q0=L exactly, hence L closed. Eσ uniqueness
+makes L δ-stable and allits second extensions common. DefineQ1 byseed
+orbit+alltheseextensions; p/q descend,H p bijective. A cover ofpacked
+firstQ0 separator+secondseed+proposeddifference automaticallycontains
+ALL second characterimages by C uniqueness; c-meet/xor provesfullQ1
+power equalized. Root and mono_retract independently checked wholeproof.
+
+finite_support_character_extension_profiles_repair_equalizers:
+extends repair to w(H Y0)≤c plus either |Y1_fs|≤c OR continuity of
+e:H Y0→H(Y1_fs), h↦h̃|fs. In particular econtinuous ifY_fs∈C_bfs.
+Now |L|≤2c; denseL'≤c defines samefirstprofilequotient, givingQ0≤c and
+H Q0=L closed. FS characterprofiles≤c undereithercondition, alongside
+finite seedFS types≤c. For a givenfullprofile, choose≤c observations
+excludingallotherFS profiles; onnonFS use2c-meet theorem. Thisforces
+wholeprofilemeet despite2c observations. ApplycontinuityonORIGINALY1,
+notQ1 (newFS points canappear). BoundsQ1≤2^(2c),ambient≤2^(2^(2c)).
+Root and mono_collapse checkedallsteps. δcontinuous alone insufficient:
+Y=(C([0ω])→Ω^[0ω]),p=q inclusion hasδ=id but e intoβ(discreteordinal)
+is notcontinuous.
+
+small_character_separated_sources_have_d_equalizers:
+if |Y0|≤c,0<|H Y0|≤c,Y1 Ω-cogenerated, then EVERY EY→M factors into
+ANY monicD-cover ofonepackedfirstsortseparator. Firstwholepower lies
+incover; Cautomaticallycoversall≤c secondcharacters; cmeets giveactual
+dualT→Y; re-coverwithproposeddifferenceeliminatesghosts. Eq∈D.
+ordinal_sources_through_continuum_are_m_rigid:
+all |κ|≤c ordinal sources areZFC safe, andj0 isM-epic. Atlimitcf≤c,
+use [uβ=n]=union_i intersection_j≥i[uβj=n], then c-continuity.
+First carrier≤c completesallfunctions; secondcharscoveredasabove.
+AlternativeminimalhullproofisZFC becauseEqwasconstructedasanactual
+quotientE Q; noNfullfaithfulnessneeded. mono_retractfullauditpassed.
+
+**LargecommoncharactersneedNOTbeclosed, evenwithactualMbfs target.**
+common_character_locus_need_not_be_closed_in_large_spectra:
+Y=(λ×Ω²)diag,λ=c+, targetU=tailcopiesE(Ω²diag)∈Mbfs. a=rowt,
+b=constantrow0. H Y0=2λ,commonL={h:eventuallyh(t)=h0}denseproper.
+Eq neverthelessunionofD_bfs tail-agreementquotients. IMPORTANTCORRECTION:
+allcharactersdoNOTseparateblockdiagonalpoints(t,(n,n)); theyallcollapse
+foreachn. Propercounterfunction F=χ_A(t)χ_[x≠y], Aunbounded,0∉A,
+descendstocorrectquotientbutnotEq. Rootnote,mono_collapseauditpassed.
+AnytwoactualK-row-representedmapstoatailhaveEq=unionE(coeqtailrows)
+andhenceM, evenwithδdiscontinuous. Needgenuinelynonrowmap.
+
+increasing_equationally_closed_spectra_fail_topological_limit_closure:
+the suggestedω-stabilization ecl(clunionKn)=clunionKn isFALSE evenfor
+countablefsS=Ω²_x⊔Ω²_y⊔ω·Ω³ andmetrizableX=2²×3ω.
+R=threecorners{00,01,10}, Kn={(x,y)∈R,z_m=code(x,y)form≥n}.
+EachKn definedbysingle-character-equalities,eqclosed. L=R×3ω isclosure
+union buteclL=X. Partialminority operation isdefinedonlimittriplebutnot
+approximatingtriples. Rootreadfullproofandfoundnogap. DoNOTassume
+closedδ-forwardhull isequationallyclosedorrealizesthedesiredquotient.
+
+**Paired-tail actualj nowgivescanonicalorbit, notjustpartialrows.**
+paired_tail_canonical_ordinal_orbit_and_endpoint_gap:
+tails λ=c+ preserve≤c BooleanopsforALLscalarΩ^S maps, noMmembership:
+restrictsmallpartitionΩ^I→tail, use smallsource rowlift andtailideal
+completeness. Frommonicjpairedseed, constructaα forα<λ withj aα=evα
+andj s_aα=evα. Shortlimit sourceeventualconstancy reflectedfromrow
+continuousfunctionsbycoperations+mono. α↦aα continuous, distinct;
+everycoordinateeventuallyconstantatλ givescanonicalaλ too, butits
+imageisunknown. Ifeverysecondprofiles_aα(y1) stabilizes, itdefinesℓ;
+Cuniqueness⇒ℓ=s_aλ andD aλ=aλ⇒j aλ=evλ. Also needk=aλto contradict
+movingmark. Neitherconditionproved. Stabilizationisalreadydecidedon
+binaryFSsecondpoints(Fix e2); nonFScontinuitydoesnotdirectlyhelp.
+mono_retractfullauditpassed; noGCHneededforthisorbitconstruction.
+
+ulam_small_ordinal_sources_and_thin_tail_templates:
+bothsortλ-sizeY∈C withspectrum[0,λ·2], k=aλ, BUTunstablesecondbinary
+profileχ_successors, ZFC. Ulamλ×c matrix+countablybitcodesperrow and
+boundedintervalseparatingcodes generateσBA B sizeλ withonlyprincipal
+countablycompleteUFs. λ^ω=λ isZFC (allωsequencesbounded,c^ω=c), noGCH!
+Addordinalclopens,d^-n closures,successorindicator; Y1=allBmeasurable
+Ωfunctions,Y0=Cordinal. ThusCandsmallnessalonecannotforcestability.
+Thinrowvarianton[0λ]: generatedbyclopens,boundedcodes,d^-n only;
+allsetsbounded/cobounded, onlyprincipalcharactersincludingtailendpoint,
+bothcarriersλZFC. Wthinbothsort≤2λ. To boundarbitrarywitnessYi≤λ
+stillneed2λ<2^(λ+), notZFC. Actualj→Ulam contradictionneedsλrows of
+consistentpartitionchoices; ≤c synchronizationdoesnotprovideit. Root
+readandcheckedfullnote. Do NOT confusecodeindicator sourcePOINTS with
+dualBooleanFUNCTIONS whenapplyingcontinuity.
+
+complete_filter_targets_and_repeated_coordinate_gluing_no_go:
+anycountableR∈C andproperc+-completefilterF give(ER)^I/F∈M_bfs
+(countableactionsareFSbyexistingautomaticcontinuitytheorem). Rowtypes
+≤c, discardallF-smalltypes, recurringtypesgivecopowerRmoniccover.
+Fineconefilteron≤c diagramfragments isavailable; partialmodelsexistence
+stillunproved. R0=Ω^n,R1=twoΩ^n gluedalongM-stableA separatingall
+coordinateprojections givesnonmonicp,butordinalj0 isepicagainstthese
+targets. Proper3colorofg↦d*g detectsconstantg; finiteA-tuples give
+jointlyinjectivepostcompositionsandforcefirstmap supportedonconstants;
+p/qjointmono forcessecond. GenericMbfs targets factorordinalsourcevia
+Y_fs, andordinaryultrafiltersyieldθuβ=θuβ+1atnonzerolimits; thisdoesNOT
+yetprovewholeY∞factorizationforκ>c. Root+mono_equalizeraudited.
+
+Live nexttasks: mono_retractgeneralizingMbfsordinalrigidityusingfinite
+determinationofcharacterextensions; mono_collapseprimary-literature
+searchonBooleanliftingP(S)→P(λ×A)/bounded-rowideal at|S|=λ; mono_equalizer
+generalcompact/equationalcommon-characterrepairbeyondsmallbounds.
+
+### Newest checkpoint: continuity and unrestricted type completion
+
+The major new result is
+continuum_boolean_continuity_and_orbit_separator_factorization_2026-11-18.md.
+For a dual sort S with countably many M1-fixed points, every map
+ω^S→Z_i, Z∈M, preserves Boolean joins/meets of ≤c subsets, as actual
+joins/meets in the target Boolean algebra. Proof: for a union choose a
+selector into c, encode it by countably many bits, pack them into one
+right-orbit generator, and use a monic local atom plus the first-difference
+counter to force a single selector cell. The fixed-point sector is
+countable and handled separately by ordinary σ-continuity. Both other
+agents independently reconstructed this argument.
+
+Hence a finite family whose full right orbit separates S suffices for
+the strong factorization theorem; no countable separating family and no
+|S|≤c bound are required. The fixed points of such an S are automatically
+countable. Both carriers may be 2^c. Monic atoms give profiles across
+≤c observations, the new meet preservation forces an actual singleton,
+and the xor-plus-local-atom argument proves whole-map equality without
+assuming that singleton images exhaust the codomain.
+
+For ANY C-source and a finite seed equalized by two M-valued maps, the
+whole full-power observation-type quotient now lies in their equalizer:
+Q0≤c (finite support), Q1≤2^c, with no finite-support hypothesis on Y1.
+The unresolved step is **C-membership of a suitable refined quotient**,
+not completion of this initial finite-seed type quotient.
+
+This gives a new positive sector:
+empty_character_monic_local_class_reflective_2026-11-18.md.
+If H(Y0)=empty, every quotient stays C, so all such source equalizers are
+safe. M_empty, with the terminal object added, is limit/union closed and
+reflective ZFC, with finite-witness ambient size 2^(2^c). Root wrote it;
+mono_equalizer independently audited all steps. Thus an actual M-based
+P4 counterexample must use nonempty character spaces and non-FS second
+sorts. The coinduced test below is now a PROTECTED source.
+
+Stronger relative continuity:
+nonfinite_support_sector_preserves_two_to_c_joins_2026-11-18.md.
+On N=S\S_fs, P(N)→[0,aχN] preserves ≤2^c joins/meets, with no restriction
+on the fixed points of S. c almost-disjoint injections have overlaps only
+in S_fs, so c bits vanishing there pack into one generator. First prove
+relative c-continuity, then use it to decode the c-bit selector. Root
+read and audited the complete proof; mono_collapse independently audited
+it as well. The FS limitation is SHARP, not merely untreated: §5 gives
+S=c^+×ω (all FS), U the diagonal tail quotient, U∈M_bfs by recurring
+row-type covers, and a:E(S diagonal)→U kills each singleton-index block
+but sends their c^+ union to1. Thus no blanket c^+-join preservation can
+repair the FS sector. The original c-continuity bound is optimal there.
+
+Current next mathematical focus: use C's unique-extension/surjectivity
+structure to repair the finite-seed type quotient, while respecting this
+genuine FS-sector failure. The alternative paired trimmed-tail route
+must extract a coherent second character from an actual full mono;
+recurrence, selected dynamics, and proper σ-filters separately do not do
+this. No automatic coreflector of C may be assumed: NC explicitly rules
+out a weak terminal set in C↓B under N. The prior No.2 results concern
+the separate constituent coreflective classes, not their intersection C.
+
+The large coinduced source S=ω^M, A=S_fs (sizes 2^c,c), Y=(A⇉S),
+has one observation h(s)=s(id) whose orbit separates both sorts and C
+holds through empty character spaces. Under N h has no proper D-hull.
+We built two explicit proposed targets: σ-BA pushout
+P(S)⊔_{σ(coordinates)}P(S), and P(S×S)/I where I consists of sets missing
+some countable-coordinate agreement relation. BOTH are outside M, ZFC:
+coinduced_sigma_amalgam_and_agreement_quotient_are_outside_m_2026-11-18.md.
+The two-generator obstruction is nonzero d=α{0}∧βE, E={ε_m:m∈M},
+whose every point piece d∧β{ε_m} is zero. E has countable separators
+packable into one β(z); a monic-cover atom then vanishes. This is not a
+P4 counterexample or a decision about H_fg membership.
+
+Other new results and live routes:
+- atomic_regular_power_maps_into_chain_unions_factor_at_a_stage:
+  any powerset map with ambient join-dense singleton images into a
+  regular chain union of complete atomic BAs (complete embeddings)
+  factors at a stage. Proof uses cofinally many overlapping atom pairs
+  and a cardinal graph two-coloring. A nonstage scalar into higher V
+  must have a nonzero component disjoint from EVERY singleton image.
+  The generic inverse construction for higher V cannot even extend to
+  a Boolean map; see large_injection_union_generic_inverse_boolean_obstruction.
+- paired_tail_sparse_blocks_give_countably_complete_filters:
+  at λ=c+, use disjoint bounded row blocks and deliberately select one
+  positive row per current source atom after synchronization. All
+  countable mixed profiles have representatives (c^ω=c). This gives
+  proper countably complete filters, not ultrafilters or point realization.
+- trimmed_ordinal_templates_bound_both_witness_sorts:
+  R0=C([0λ]), R1=functions eventually constant INCLUDING endpoint λ,
+  p=inclusion,q=successor precomposition. R∈C under N, and for λ=c+
+  actually ZFC; bounded sets have size≤c. With 2^{<λ}=λ and GCH,
+  both witness sorts in EY↪tail(R) have size≤λ. Sparse blocks can retain
+  ALL second-sort atoms and preserve the whole mono. Stage-induced
+  paired witnesses remain impossible. Small-source tail lifting is in
+  small_power_maps_into_tail_quotients_lift_to_a_stage (ZFC, ≤c source).
+- trimmed_partial_rows_recurrence_versus_unique_extensions:
+  a target spectrum [0,λ·2] and rows with first-block plateau at t and
+  second-block shift t+β give recurrence, selected marks/dynamics, CIP.
+  But forcing all second-sort points to recur leaves both a left-limit
+  character at the interior λ and evaluation at λ, violating C's unique
+  extension. A general proof extracting this second character from an
+  actual mono remains OPEN. Arbitrary trimmed row functions can oscillate
+  below their individual cutoff, so recurrence alone supplies no coherent
+  left-limit value. Do not claim the model proves general nonmembership.
+- uncountable_character_profiles_small_quotient_criterion:
+  a small δ-invariant first quotient plus ≤c realized second profiles
+  gives a C quotient inside the equalizer. Baire profiles provide one
+  sufficient bound, with a separate ≤c seed-orbit-type hypothesis.
+  Both δ-invariance and profile smallness remain additional conditions.
+
+All named files in this checkpoint end with _2026-11-18.md. General M
+equalizer/retract closure and a P4 counterexample remain unresolved.
+
+### Latest checkpoint (supersedes older open BFS/small-source comments)
+
+The strongest new result is now a COMPLETE ZFC positive theorem:
+M_bfs (monic local C-witnesses with both sorts finite-support) is
+limit-closed, directed-union-closed, and reflective. Moreover
+Eq(A⇉B)∈M_bfs whenever A∈M_bfs and B∈unrestricted M. Reflection
+size≤max(|X|,2^c). See
+both_finite_support_monic_local_class_is_reflective_2026-11-18.md.
+The proof has been independently reconstructed by multiple agents.
+
+Key new general mechanism:
+packed_separators_force_monic_d_factorization_2026-11-18.md.
+If each dual carrier has a countable separating family packed into
+finitely many ambient generators, EVERY a:E(Y)→Z∈M factors through
+one mono j:E(T)↪Z as jE(τ). Cover the packed images; each singleton
+atom of E(T) determines a coordinate profile; a first-difference counter
+forces that profile to be a unique actual Y-point. Atom domination
+proves τ equivariant/natural. The root countable-separator epic lemma
+then proves whole-map equality, avoiding an unjustified inference from
+atomwise equality alone. Common cover for a,b gives Eq∈D by explicit
+C-coequalizer, ZFC. No N or finite-support hypothesis is used here.
+If the target is any directed D-union, choose its stage containing the
+packed images: all such maps actually factor through one stage.
+
+No-fixed-point carriers of size≤c have packed countable separators:
+disjoint-image injections b_n give disjoint b_nY, so z(b_n y)=f_n(y).
+Countably many fixed points also suffice if all separators use the
+same injective even-valued label on fixed points and odd binary codes
+elsewhere. At a finite seed, collapse only same-profile fixed points;
+this creates no new fixed points and preserves C because each changed
+character space is empty. Thus EVERY Y∈C with |Y_i|≤c has local
+Eq(EY⇉M)∈M, even with non-finite-support second sort. Details:
+fixed_point_normalization_for_small_isbell_witnesses_2026-11-18.md.
+
+For arbitrary-size C_bfs source, use existing epi compression ≤c.
+An alternative proof splits H(Y0)=empty (every quotient stays C) and
+nonempty (preserve one auxiliary character in the compression list;
+it need NOT be in the equalizer). This completes M_bfs closure.
+Consequently S=C([0,ω1]) with diagonal arrows and all other proposed
+small nonseparable-spectrum sources are SAFE. Spectrum separability
+is not the final dividing line; arbitrary carrier separators suffice.
+
+Root also proved countable_ordinal_sources_are_rigid_over_m_targets:
+countable limit agreement propagates using two packed generators and
+an eventual-constancy counter on C([0,κ]). For countable κ, maps to
+M agreeing j0 coincide. Independently audited. Fg subpresheaves can
+contain only countably many ordinal evaluations, so simple packing
+cannot extend this argument to uncountable cofinality.
+
+Additional positive theorem:
+coslices_of_abelian_groups_limit_countable_union_reflection_2026-11-18.md.
+ALL X/Ab full limit/countable-union closed classes are reflective ZFC.
+For (G,u)∈A use B_G={K:(G⊕K,(u,0))∈A}; fiber products give limits,
+shear makes G∈B_G. Ab's small hull can be a kernel θ:G→P because
+its small ambient subobject is actually a retract. Graph-vs-zero-graph
+in A then extracts the required small pointed subgroup. Bound μ^ω.
+The E-ring explicit note builds U from powers R^{Hom_1(K,R)} over
+finite-rank pure K⊂R (R aleph1-free E-ring), surjective restrictions
+give mono union, evaluation f and constants c have Eq=Z1. Root
+checked the full direct proof. This rejects another generic mono-local
+repair, not P4; no infinite-product Hom classification is needed.
+
+Latest active directions:
+- mono_equalizer: higher V systems indexed α<κ+, with Tα injections
+  α→κ having complement cardinal κ (NOT merely infinite). All
+  transitions are onto, hence U∈M. Original ω1/cell≤c arguments do
+  not directly cover them. Generic inverse-coordinate events e_ξ give
+  κ+ disjoint nonzero Boolean elements with supremum1, but arbitrary
+  unbounded/co-unbounded subfamily joins do not exist; the naive
+  powerset map from the generic inverse ordinal therefore fails.
+- mono_retract: large non-FS second-sort constructions, paired-tail
+  seed-killing extensions and genuinely new σ-amalgam targets.
+- mono_collapse: general paired-tail nonlifting witnesses; mixed
+  second-sort fibres currently have FIP only, no proved σ-completeness.
+
+Group-route caution: root checked only the consequences of published
+Sh:739 Main Thm1.3, not its entire construction. Agent found apparent
+literal construction issues (κ=ω versus aleph1-free markers, and
+malnormality after adjoining U×L); do not treat those later lemmas as
+audited inputs. See groups_finite_hulls... §13. Main theorem is still
+cited as published; no claim it is false. Group partial-Hom systems
+cannot use all partial maps: explicit noninjective and injective
+H-preserving partial maps fail to extend. Self-power/mixed-ultraproduct
+consequence proofs themselves passed independent reconstruction.
+
+Read README.md for the indexed statements and dependencies. The actual
+candidate M is product- and directed-union-closed in ZFC and nonreflective
+under N plus the No.1 input (NC). The entire proof through Corollary 9
+has now passed an independent agent reconstruction, with no gap found:
+independent_audit_no1_nc_dependency_2026-11-18.md. This is internal
+proof review, not external review, formal verification, or novelty audit.
+General equalizer and retract closure remain unresolved.
+
+New explicit ZFC separation: M⊊H_fg; M fails μ-filtered-colimit closure
+for every infinite regular μ≤2^c. The source is the permutation-antichain
+element in the Y_ω tail quotient. Failure above 2^c remains open.
+
+## Strongest recent positive exclusions
+
+1. Any countably cofinal mono D-union is a safe equalizer codomain under
+   N, without splitness or a source cardinal bound.
+2. All scalar coordinates having stage evaluation representations forces
+   one common stage for E(Y)→V^R, without any target-generator bound.
+3. No inner model with a measurable cardinal (in particular V=L) implies
+   **all** scalar Ω^S→K maps are stage evaluations, for arbitrary S.
+   The kernel ideal is c^+-complete, the quotient has cellularity ≤c,
+   and a nonprincipal remainder would give a saturated ideal and hence
+   an inner measurable. This uses the exact published Kunen result
+   recorded on p.2 of Kanamori–Shelah, math/9401212.
+   Therefore all original ω_1-length V^R targets and products/subobjects
+   thereof are safe under this stronger assumption. Do not weaken it
+   to N.
+4. A c^+-tail quotient of copies of Z_* belongs to M and has **no map**
+   to any nonterminal original V^R, for any R, in ZFC (Ulam matrix).
+   Thus these targets do not cogenerate all M. Nevertheless all diagonal
+   tail targets are separately proved safe in ZFC, by row lifts and
+   recurrent pairs.
+5. All E(Y_κ)→Z with Z∈H_fg and monic structural p factor through the
+   countable Y_∞ in ZFC. For Z∈M this makes those equalizers D-objects
+   under N. Nonmonic-p targets are necessary for this ordinal-source test.
+
+## Exact minimal hull of the ordinal seed
+
+Under N, j_0:X→E(Y_κ) is contained in no proper D-subobject. The dual
+epi v:Y_κ→Q would induce a closed successor-stable subset of [0,κ]
+containing 0; this must be the whole interval. Evaluation separation
+then forces v to be an isomorphism. No (NC) input is used.
+
+Consequently ANY two distinct M-valued maps out of E(Y_κ) agreeing on
+j_0 immediately yield a true failure of M-equalizer closure. The earlier
+Y_(ω_1) note's extra smaller-witness obligation was unnecessary; it is
+being corrected by its author. Non-stage maps to that V-target are not
+constructed and are excluded under no inner measurable.
+
+## Concrete open construction
+
+For each arbitrarily large regular λ>c, let
+
+    W = colim_tail E([β,λ)·Y_λ),
+
+and take the two evaluation seeds (0,t) in row t, giving X⊔X→W.
+The note paired_ordinal_tail_stage_monic_obstruction proves that this
+seed has **no stage-induced monic C-witness**, under N, for any such λ.
+It uses actual row maps q_t:Y_λ→Y, induced continuous spectra maps,
+an ultrafilter-defined transfinite orbit, and recurrence of every
+source point forced by monicity. The proof has been checked internally.
+
+Remaining gap: a monic E(Y)→W need not lift to a tail stage. Singleton
+indicators recover only boundedly many equations at once, not a total
+K-map on each row. Excluding those nonlifting witnesses would establish
+filtered-colimit failure at arbitrarily large regular cardinals.
+
+All single evaluation seeds, even with varying ordinal row sizes and
+interior evaluation points, are already safe by rebasing and eventual
+supremum. Point-type compression alone cannot solve the two-mark problem:
+Q(X⊔X)=B×B is a small bad-C image even of legitimate constant D-witnesses.
+
+## Candidate repairs already excluded or still open
+
+- All D-subobjects of an M-object need not be directed, even when that
+  object is itself one directed union of cyclic D-subobjects. The explicit
+  Ω^I×(Ω^I/countable disagreement) example proves this under N.
+- The stronger class L requiring every D-map's image to lie in a
+  D-subobject fails directed-union closure by the same example.
+- One-step U(D), the directed-union closure of D, is product-closed,
+  but its iterated union and equalizer closure remain unproved. Do not
+  identify it with M or L.
+- The least product/equalizer/union closure A of D satisfies
+  A∩E(K^op)=D in ZFC via finite-rank separation and Eσ-orthogonality.
+  This does not prove nonreflection: a reflection can land outside E.
+- The explicit W∈H_fg\M CANNOT embed into any M-object, hence cannot
+  be an M-retract or M-equalizer counterexample. In fact every W→M
+  kills its antichain seed x. The two-generator proof packs c unary
+  constraints using almost-disjoint injections and a pairing code:
+  antichain_seed_cannot_survive_in_m_targets_2026-11-18.md.
+  It was independently reconstructed by root and mono_collapse.
+  A concrete sigma-Boolean amalgam preserves W and its D-witness
+  monically and satisfies all four intrinsic axioms, but is outside
+  H_fg and even outside LimUnion(D). The latter follows because
+  L_full={every fg subpresheaf embeds in a full E(Y)} is closed under
+  subobjects, products and mono unions, and the same obstruction
+  already works for L_full targets with a monic full-power cover of x.
+
+## New positive theorem for the whole of Ab
+
+abelian_groups_limit_countable_union_reflection_theorem_2026-11-18.md
+proves in ZFC that ANY full limit-closed subcategory of Ab closed
+under countable ascending unions is reflective. Every X→G admits
+an A-subgroup factorization of size≤max(|X|,aleph0)^aleph0, and the
+reflector has this bound too. Prime torsion exponents split into bounded
+ones (bounded pure subgroups split) and unbounded ones (generate Prüfer
+groups, hence Q). The allowed divisible envelope plus all bounded
+primary retracts jointly embed G. Small summands and a small divisible
+subgroup, pulled back along this mono, give the bound. Only the
+factorial TF chain and cyclic-to-Prüfer chain use union closure.
+The entire proof and its classical primary sources have been checked
+independently; audit note is indexed in README. Ab is excluded entirely,
+not just the previously excluded Specker or torsion-free routes.
+
+## Intrinsic subobjects and truncation closure
+
+finite_image_intrinsic_subobject_counterexample_2026-11-18.md gives
+A_i=Fin(Ω,Ω)⊂E(Z_*)_i, p=q=id. All four intrinsic axioms hold, but
+A∉H_fg and A∉M in ZFC. All full-power maps to A have constant image.
+This is NOT an equalizer counterexample: A→E(Z_*) is epic against
+every left-separated target by left truncations e_n.
+Actual equalizers are truncation-closed: e_n f in the subobject for
+all n implies f is in it. Together with finite tuples and constants,
+this identifies each sort with Γ(B) for a σ-Boolean subalgebra
+B⊂P(Y_i). If Y_i are countable, these are complete atomic, and the
+intrinsic conditions give a C-quotient and hence a D-object in ZFC.
+Uncountable Borel examples and a σ-amalgam equalizer test are being
+examined; do not assume σ-completeness alone restores M-membership.
+
+## New partial-row reduction
+
+paired_tail_atomic_rows_have_spectral_extensions_2026-11-18.md:
+assuming |Y0|≤λ (automatic V=L/GCH), schedule <λ sets of atoms and
+finite character patterns to obtain recurrent M-stable partial rows
+whose EVERY character extends to ordinal evaluation. Thus the finite
+missing-pattern example is ruled out for these actual atomic rows.
+The output is a compact surjective relation L_t⊂T×[0,λ], not a
+continuous map. Continuous selection can fail even for ordinal quotients.
+Further warning from agent: D_t≅Y_t⊂Y_λ via min(-,t) gives exactly
+successor-stable relations min(η,t)=min(ξ,t), recurrence on first sort
+and pY0∪qY0, and marks (ev0,0),(evλ,t). These weaker data alone give
+no contradiction. Global second-sort recurrence/compatibility is key.
+
+## Nonabelian group route
+
+groups_finite_hulls_and_rigid_simple_power_maps_2026-11-18.md records:
+- In limit/countable-union closed A⊂Grp, commuting seeds lie in small
+  A-subgroups via Z(C_G(S)) and the Ab theorem. Noncommuting finite
+  seeds remain open.
+- Published Göbel–Shelah Sh:739 Thm1.3 gives arbitrary large simple G
+  containing H=A5, provided μ^aleph0=μ, |G|=μ+. Do NOT omit this
+  published cardinal hypothesis (early arXiv display omitted it).
+- Every element is ≤4 conjugates of each nontrivial element; padding
+  using A5 identities of lengths2 and3 gives exactly6 conjugates of a
+  fixed diagonal involution in any mixed product. This yields factorization
+  of EVERY nonzero mixed-product→T map through one simple ultraproduct
+  which embeds in T. Self-powers have |G|+-complete ultrafilter, hence
+  coordinate maps under N. Root reconstructed these proofs and checked
+  the published theorem directly.
+- Proper-class cross-Hom control and preservation under unions are NOT
+  proved. Individual large localizations do not show one class lacks
+  a solution set. Cotorsion-free-marker shortcut fails: the construction
+  makes infinite-order elements conjugate, so each lies in a Q-subgroup.
+
+## Parallel work at this checkpoint
+
+- mono_collapse: paired nonlifting monic witnesses, especially second-sort
+  compatibility beyond compact relations.
+- mono_retract: Borel σ-complete intrinsic subobjects and the actual
+  σ-Boolean amalgam equalizer target's M/H_fg membership.
+- mono_equalizer: nonabelian simple groups, proper-class cross-Hom control,
+  mixed product maps, and limit/union closure. Fixed G powers in H/Grp
+  form a full limit-closed Set^op under N; this alone is set-bounded.
+
+No new external publication or messaging is authorized. Local notes and
+proof checks are authorized. No external proof review or Lean verification
+has occurred. No memory rollout was read in this research pass.

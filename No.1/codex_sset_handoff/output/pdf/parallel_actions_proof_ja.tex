@@ -1,0 +1,753 @@
+% !TeX program = lualatex
+% Compile with LuaLaTeX until cross-references stabilize (normally two runs).
+\documentclass[a4paper,11pt]{ltjsarticle}
+\usepackage[haranoaji,nfssonly]{luatexja-preset}
+\usepackage[margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[unicode,bookmarksnumbered,hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+
+\newtheoremstyle{japaneseplain}
+  {8pt}{8pt}{\normalfont}{}{\bfseries}{.}{.6em}{}
+\theoremstyle{japaneseplain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\renewcommand{\refname}{参考文献}
+
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\MSet}{M\text{-}\Set}
+\newcommand{\D}{\mathcal D}
+\newcommand{\A}{\mathcal A}
+\newcommand{\Ical}{\mathcal I}
+\newcommand{\Naxiom}{\mathsf N}
+\newcommand{\Pstmt}{\mathsf P}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Cont}{\operatorname{Cont}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pairarrows}[2]{\mathrel{\mathop{\rightrightarrows}\limits^{#1}_{#2}}}
+\newcommand{\coorth}[1]{{}^{\perp}\!#1}
+\DeclareMathOperator{\supp}{supp}
+
+\setlist[enumerate]{label=\textup{(\arabic*)},leftmargin=2.5em,itemsep=3pt,topsep=5pt}
+\setlength{\emergencystretch}{2em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 小さい coorthogonality class の条件付き反例}
+\fancyhead[R]{\small 証明稿}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\hypersetup{
+  pdftitle={可測基数の非存在下における小さい coorthogonality class の非余反射性},
+  pdfsubject={M作用付き平行二射による固定テスト・固定標的の反例},
+  pdfauthor={},
+  pdflang={ja-JP}
+}
+
+\title{可測基数の非存在下における\par
+小さい coorthogonality class の非余反射性}
+\author{}
+\date{2026年11月16日\quad 証明稿・第1版}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+\begin{abstract}
+非可算可測基数が存在しないと仮定する。このとき、一つの前層圏において、
+二本の固定した射により定義される coorthogonality class が余反射的でないことを示す。
+具体的には、可算無限集合の全変換モノイドの作用を持つ平行二射を考え、
+有限支持条件と評価写像の全単射性を二本のテストで指定する。
+コンパクト順序数空間と後続操作を用いると、固定標的への射の任意の因子化先に
+非有界な濃度下界が生じる。従って、その標的上のコンマ圏には弱終集合がない。
+既知の Vopěnka 原理による肯定結果と合わせ、通常の相対的独立性の帰結を記す。
+\end{abstract}
+
+\begingroup
+\small
+\noindent 本稿は既存の研究ノートを独立に読める形に清書した証明稿である。
+記述の再点検は行ったが、独立した査読および形式検証は未実施である。
+\par
+\endgroup
+
+\section{問題の定式化と主定理}\label{sec:statement}
+
+局所小圏 $\mathcal K$ の射 $s:U\to V$ と対象 $X$ に対して、
+\[
+ X\perp s
+ \quad\Longleftrightarrow\quad
+ \mathcal K(X,s):\mathcal K(X,U)\longrightarrow\mathcal K(X,V)
+ \text{ が全単射}
+\]
+と定める。射の集合 $\Sigma$ に対し、
+\[
+ \coorth{\Sigma}
+ =\{X\in\mathcal K: X\perp s\text{ for every }s\in\Sigma\}
+\]
+はこれらの対象からなる充満部分圏を表す。本稿の Hom は常に通常の射集合である。
+「小さい coorthogonality class」とは、テストの族 $\Sigma$ が集合であることを意味する。
+
+充満部分圏 $\A\subseteq\mathcal K$ が\emph{余反射的}（coreflective）であるとは、
+包含が右随伴を持つことをいう。対象 $B$ における余反射は、
+コンマ圏 $\A\mathbin{\downarrow}B$ の終対象、すなわち射 $r:R\to B$（$R\in\A$）であって、
+任意の $a:A\to B$（$A\in\A$）が $r$ を一意に経由するものである。
+同コンマ圏の\emph{弱終集合}とは、射の集合
+$\{b_i:Z_i\to B\}_{i\in I}$（$Z_i\in\A$）であって、
+任意の $a:A\to B$ が少なくとも一つの $b_i$ を経由するものをいう。
+従って、弱終集合がなければ余反射もない。
+
+Adámek--Rosický の Problem~1 \cite[p.~295]{AR94} に対応する主張を
+\[
+ \Pstmt:\quad
+ \text{任意の局所可呈示圏の任意の小さい coorthogonality class は余反射的である}
+\]
+と書く。また、集合論的仮定を
+\[
+ \Naxiom:\quad \text{非可算可測基数が存在しない}
+\]
+とする。ここで、非可算基数 $\kappa$ が可測であるとは、$\kappa$ 上に非主的な
+$\kappa$-完備超フィルターが存在することをいう。
+
+以下、$\Omega=\omega$、$M=\End_{\Set}(\Omega)$ と固定し、積を
+$mn=m\circ n$ とする。$\MSet$ は左 $M$-集合と $M$-同変写像の圏である。
+$J$ を二対象 $0,1$ と二本の非恒等射 $0\rightrightarrows1$ からなる圏とし、
+\[
+ \D=(\MSet)^J\cong\Set^{M\times J}
+\]
+と置く。右辺で $M$ は一対象圏とみなす。これは小圏 $(M\times J)^{\op}$ 上の
+前層圏なので、局所可呈示圏である。対象を
+\[
+ Z=(Z_0\pairarrows{p_Z}{q_Z}Z_1)
+\]
+と書く。二射に追加の関係式は課さない。$1$ は自明な作用を持つ一元集合とする。
+
+\begin{theorem}\label{thm:main}
+$\mathrm{ZFC}+\Naxiom$ の下で、$\D$ の二本の固定した射の集合 $\Sigma$ と
+固定した対象 $B=(\Omega\rightrightarrows1)$ が存在し、
+$\A=\coorth{\Sigma}$ に対して $\A\mathbin{\downarrow}B$ は弱終集合を持たない。
+従って $\A$ は余反射的でなく、$\Pstmt$ は偽である。
+\end{theorem}
+
+$\Sigma$ は第\ref{sec:tests}節で明示する。$\D,\Sigma,B$ はすべて一度だけ固定され、
+後に導入する基数 $\kappa$ に依存しない。証明は、有限支持を固定テストで指定すること、
+有限支持から Hom 空間のコンパクト性を得ること、そして任意の因子化先に対して
+濃度下界を示すことの三段階からなる。
+
+\section{有限支持を検出する固定した射}\label{sec:support}
+
+\begin{definition}\label{def:support}
+左 $M$-集合 $A$ の元 $a$ に対し、有限集合 $S\subseteq\Omega$ が $a$ の
+\emph{支持}であるとは、
+\begin{equation}\label{eq:support}
+ m|_S=n|_S\quad\Longrightarrow\quad ma=na
+ \qquad(m,n\in M)
+\end{equation}
+が成り立つことをいう。すべての元が有限な支持を持つとき、$A$ を有限支持 $M$-集合と呼ぶ。
+\end{definition}
+
+$S$ が $a$ を支持すれば、$m(S)$ は $ma$ を支持する。実際、$r,s$ が $m(S)$ 上で
+一致すれば $rm,sm$ が $S$ 上で一致する。また、$M$-同変写像は支持を保存する。
+
+\begin{lemma}\label{lem:stabilizer}
+有限集合 $S\subseteq\Omega$ が $a\in A$ の支持であることと、
+\begin{equation}\label{eq:stabilizer}
+ n|_S=\id_S\quad\Longrightarrow\quad na=a
+ \qquad(n\in M)
+\end{equation}
+は同値である。
+\end{lemma}
+\begin{proof}
+\eqref{eq:support} から \eqref{eq:stabilizer} は恒等写像との比較で従う。
+逆に \eqref{eq:stabilizer} を仮定し、$m|_S=n|_S$ とする。
+$\Omega$ は可算無限で $S$ は有限なので、
+\[
+ w|_S=m|_S=n|_S,\qquad |w^{-1}(t)|=\aleph_0\quad(t\in\Omega)
+\]
+を満たす $w:\Omega\to\Omega$ を選べる。
+例えば $\Omega\setminus S$ を可算個の無限集合に分割し、それぞれを対応する値に写せばよい。
+$u,v\in M$ を、$S$ 上では恒等写像とし、$x\notin S$ では
+\[
+ u(x)\in w^{-1}(m(x)),\qquad v(x)\in w^{-1}(n(x))
+\]
+となるように選ぶ。このとき $wu=m$、$wv=n$ なので
+$ma=wua=wa=wva=na$ である。
+\end{proof}
+
+集合 $K=\{0,1\}^{M}$ に
+\begin{equation}\label{eq:cofree}
+ (n\chi)(m)=\chi(mn)
+\end{equation}
+で左 $M$-作用を入れる。実際、
+$(n(r\chi))(m)=\chi((mn)r)=((nr)\chi)(m)$ である。
+$U\subseteq K$ を、ある有限集合 $S\subseteq\Omega$ に対して
+\begin{equation}\label{eq:cylinder}
+ m|_S=n|_S\quad\Longrightarrow\quad\chi(m)=\chi(n)
+\end{equation}
+となる $\chi$ 全体とする。
+
+\begin{lemma}\label{lem:cylinder}
+$U$ は $K$ の有限支持元全体である。特に $U$ は $M$-部分集合である。
+\end{lemma}
+\begin{proof}
+$\chi$ が \eqref{eq:cylinder} を満たすとする。$r|_S=s|_S$ なら、任意の $m\in M$ について
+$(mr)|_S=(ms)|_S$ なので、$(r\chi)(m)=(s\chi)(m)$ である。
+従って $S$ は $\chi$ を支持する。逆に $S$ が $\chi$ の支持なら、
+$r|_S=s|_S$ に対して $r\chi=s\chi$ を恒等写像で評価し、$\chi(r)=\chi(s)$ を得る。
+作用による有限支持の保存から最後の主張も従う。
+\end{proof}
+
+包含 $j:U\hookrightarrow K$ を固定する。
+
+\begin{proposition}\label{prop:supporttest}
+任意の左 $M$-集合 $A$ について、
+\[
+ A\perp j\quad\Longleftrightarrow\quad A\text{ は有限支持 }M\text{-集合}
+\]
+が成り立つ。
+\end{proposition}
+\begin{proof}
+$A$ が有限支持なら、任意の $M$-同変写像 $A\to K$ は有限支持元に値を取り、
+補題\ref{lem:cylinder}により $U$ を経由する。$j$ は単射なので、その経由は一意である。
+
+逆に $A\perp j$ とし、$a\in A$ を固定する。$c_a:A\to\{0,1\}$ を
+$c_a(x)=1$ と $x=a$ が同値になるように定め、
+\[
+ \Phi_a:A\longrightarrow K,\qquad \Phi_a(x)(m)=c_a(mx)
+\]
+と置く。これは
+\[
+ \Phi_a(nx)(m)=c_a(mnx)=(n\Phi_a(x))(m)
+\]
+により $M$-同変である。仮定より $\Phi_a(a)\in U$ なので、その有限支持 $S$ を取る。
+$n|_S=\id_S$ なら $n\Phi_a(a)=\Phi_a(a)$ であり、両辺を恒等写像で評価して
+$c_a(na)=c_a(a)=1$ を得る。従って $na=a$ である。
+補題\ref{lem:stabilizer}により $S$ は $a$ の支持である。
+\end{proof}
+
+この命題は、有限支持条件を一つの固定した射への coorthogonality として表している。
+$K$ と $U$ はともに集合であり、検査される対象 $A$ の濃度には依存しない。
+
+\section{前層圏における二本のテスト}\label{sec:tests}
+
+$M$-集合 $A$ に対し
+\[
+ H(A)=\Hom_M(A,\Omega)
+\]
+と置く。$M$-同変写像 $a:A\to A'$ に対し、$H(a):H(A')\to H(A)$ は前合成である。
+また、$M$-集合 $W$ に対し
+\[
+ R_0(W)=(W\rightrightarrows1)
+\]
+と置く。両構造射は終対象への一意な射であり、自然な全単射
+\begin{equation}\label{eq:R0}
+ \Hom_{\D}(Z,R_0(W))\cong\Hom_M(Z_0,W)
+\end{equation}
+がある。
+
+第一のテストを
+\begin{equation}\label{eq:tau}
+ \tau=R_0(j):(U\rightrightarrows1)\longrightarrow(K\rightrightarrows1)
+\end{equation}
+とする。第二のテストは
+\begin{equation}\label{eq:sigma}
+ \sigma:
+ (\Omega^2\pairarrows{\pi_0}{\pi_1}\Omega)
+ \longrightarrow
+ (\Omega\rightrightarrows1),
+ \qquad \sigma_0=\pi_0,\quad\sigma_1=!
+\end{equation}
+である。$\Omega^2$ には対角作用を入れる。二つの自然性条件はいずれも $1$ への射の等式なので成立する。
+以後、
+\begin{equation}\label{eq:fixeddata}
+ \Sigma=\{\tau,\sigma\},\qquad
+ \A=\coorth{\Sigma}\subseteq\D,\qquad
+ B=(\Omega\rightrightarrows1)
+\end{equation}
+を固定する。
+
+\begin{proposition}\label{prop:membership}
+$Z=(Z_0\pairarrows{p_Z}{q_Z}Z_1)$ に対して、
+\begin{equation}\label{eq:membership}
+ Z\in\A\quad\Longleftrightarrow\quad
+ \begin{cases}
+ Z_0\text{ は有限支持 }M\text{-集合},\\
+ H(p_Z):H(Z_1)\longrightarrow H(Z_0)\text{ は全単射}
+ \end{cases}
+\end{equation}
+である。
+\end{proposition}
+\begin{proof}
+$Z\perp\tau$ は \eqref{eq:R0} と命題\ref{prop:supporttest}により第一条件と同値である。
+一方、$Z$ から $\sigma$ の始域への射は、第二成分 $v:Z_1\to\Omega$ によって一意に決まり、
+第一成分は $(vp_Z,vq_Z):Z_0\to\Omega^2$ となる。
+$Z$ から $\sigma$ の終域への射は任意の $a:Z_0\to\Omega$ によって一意に決まる。
+この同定の下で $\Hom_{\D}(Z,\sigma)$ は $v\mapsto vp_Z$、すなわち $H(p_Z)$ である。
+\end{proof}
+
+有限支持を要求するのは $Z_0$ だけである。また $q_Z$ には追加条件を課していない。
+$H(p_Z)$ の全単射性は、$p_Z$ 自身が同型であるという条件ではない。
+
+\section{コンパクトな Hom 空間と評価表示}\label{sec:duality}
+
+各 $H(A)$ には、$\Omega$ を離散空間とした積 $\Omega^A$ の部分空間位相を入れる。
+従って $H(A)$ は常に Hausdorff である。前合成写像 $H(a)$ は各座標について連続なので連続である。
+
+\begin{lemma}\label{lem:compactH}
+$A$ が有限支持 $M$-集合なら、$H(A)$ はコンパクト Hausdorff 空間である。
+\end{lemma}
+\begin{proof}
+各 $a\in A$ に有限支持 $S_a\subseteq\Omega$ を選ぶ。
+任意の $h\in H(A)$ について $h(a)\in S_a$ である。
+実際、$S_a$ を点ごとに固定する $m\in M$ は $a$ を固定するので、
+$m(h(a))=h(ma)=h(a)$ となる。そのような $m$ のすべてに固定される $\Omega$ の元は
+$S_a$ の元に限られる。
+
+従って $H(A)\subseteq\prod_{a\in A}S_a$ である。
+この積の中で、$H(A)$ はすべての $m\in M$ と $a\in A$ に対する閉条件
+\[
+ h(ma)=m(h(a))
+\]
+で定義される。各 $S_a$ は有限離散空間なので、Tychonoff の定理から積はコンパクトであり、
+その閉部分空間 $H(A)$ もコンパクトである。
+空の支持があれば $H(A)=\varnothing$ となり、この場合も結論は成立する。
+$A=\varnothing$ なら $H(A)$ は一元空間である。
+\end{proof}
+
+コンパクト Hausdorff 零次元空間 $X$ に対して、
+\[
+ C(X)=\Cont(X,\Omega),\qquad F(X)=\Omega^X
+\]
+と置く。両者に $m\cdot f=m\circ f$ による後合成作用を入れ、
+$i_X:C(X)\hookrightarrow F(X)$ を包含とする。
+
+\begin{lemma}\label{lem:compactevaluation}
+$C(X)$ は有限支持 $M$-集合であり、評価写像
+\begin{equation}\label{eq:compactevaluation}
+ \epsilon_X:X\longrightarrow H(C(X)),\qquad
+ x\longmapsto\ev_x
+\end{equation}
+は同相写像である。
+\end{lemma}
+\begin{proof}
+任意の $f\in C(X)$ の像はコンパクトな離散空間なので有限であり、その像が $f$ の支持になる。
+まず $X\ne\varnothing$ として、$\varphi:C(X)\to\Omega$ を $M$-同変写像とする。
+$\im(f)$ を点ごとに固定するすべての $m\in M$ を使えば
+$\varphi(f)\in\im(f)$ が従う。
+
+有限個の $f_1,\ldots,f_n\in C(X)$ を取る。値の組の有限集合
+\[
+ E=\{(f_1(x),\ldots,f_n(x)):x\in X\}
+\]
+を $\Omega$ に単射で符号化し、その符号を与える連続写像 $g:X\to\Omega$ を作る。
+各座標の復号写像を $\Omega$ 全体に延長して $m_i\in M$ を取れば $f_i=m_i g$ である。
+$\varphi(g)\in\im(g)$ なので、ある $x\in X$ について
+\[
+ f_i(x)=m_i(g(x))=m_i(\varphi(g))=\varphi(f_i)
+ \qquad(1\le i\le n)
+\]
+となる。
+従って閉集合 $f^{-1}(\{\varphi(f)\})$（$f\in C(X)$）の族は有限交叉性を持つ。
+コンパクト性により共通点 $x$ が存在し、$\varphi=\ev_x$ となる。
+零次元 Hausdorff 性により clopen 集合の特性関数は点を分離するので、$x$ は一意である。
+
+$\epsilon_X$ は各座標 $f\in C(X)$ で連続であり、従って連続である。
+コンパクト空間から Hausdorff 空間への連続全単射なので同相写像である。
+$X=\varnothing$ の場合、$C(X)=1$ であるが $\Omega$ に $M$ の共通固定点はないので、
+$H(C(X))=\varnothing$ となり、同じ結論が成立する。
+\end{proof}
+
+次に、任意の集合 $X$ に対して $H(F(X))$ を計算する。
+以下は Isbell の結果 \cite[\S2.5]{Isbell60} の、本稿で必要となる向きである。
+$M$-集合による記述は \cite[p.~20]{Shulman08} も参照されたい。
+
+\begin{lemma}\label{lem:ultrafilter}
+集合上の非主的な可算完備超フィルターが存在すれば、非可算可測基数が存在する。
+\end{lemma}
+\begin{proof}
+$\mathscr U$ を集合 $X$ 上のそのような超フィルターとする。
+$X$ を $\mathscr U$ に属さない集合だけに分割できる最小の基数を $\kappa$ とする。
+非主性により一元集合への分割が使えるので $\kappa$ は存在し、可算完備性から $\kappa>\omega$ である。
+
+$\mathscr U$ は $\kappa$-完備である。そうでなければ、ある順序数 $\lambda<\kappa$ と
+$A_\alpha\in\mathscr U$（$\alpha<\lambda$）に対して
+$A=\bigcap_{\alpha<\lambda}A_\alpha\notin\mathscr U$ となる。
+このとき $A$ と
+\[
+ \Bigl(\bigcap_{\beta<\alpha}A_\beta\Bigr)\setminus A_\alpha
+ \qquad(\alpha<\lambda)
+\]
+は、空集合を除けば $X$ の分割である。どのセルも $\mathscr U$ に属さず、
+セル数は $\kappa$ 未満なので、$\kappa$ の最小性に反する。
+
+$X=\coprod_{\alpha<\kappa}E_\alpha$ を最小の分割とし、
+$r:X\to\kappa$ をセル番号の写像とする。押し出した超フィルター
+\[
+ r_*\mathscr U=\{S\subseteq\kappa:r^{-1}(S)\in\mathscr U\}
+\]
+は $\kappa$-完備であり、どの一元集合も含まない。
+従って $\kappa$ は非可算可測基数である。
+\end{proof}
+
+\begin{proposition}[Isbell の評価表示]\label{prop:isbell}
+$\Naxiom$ の下で、任意の集合 $X$ に対して
+\begin{equation}\label{eq:isbell}
+ \eta_X:X\longrightarrow H(F(X)),\qquad x\longmapsto\ev_x
+\end{equation}
+は集合の全単射である。
+\end{proposition}
+\begin{proof}
+$X\ne\varnothing$ とし、$M$-同変写像 $\varphi:F(X)\to\Omega$ を取る。
+任意の $f:X\to\Omega$ について、$\im(f)$ を点ごとに固定するすべての自己写像との
+可換性から $\varphi(f)\in\im(f)$ が従う。
+各 $A\subseteq X$ の $0$--$1$ 値特性関数を $\chi_A$ とし、
+\[
+ \mathscr U_\varphi
+ =\{A\subseteq X:\varphi(\chi_A)=1\}
+\]
+と定める。
+
+これは超フィルターである。まず定数関数への作用から
+$X\in\mathscr U_\varphi$、$\varnothing\notin\mathscr U_\varphi$ が従う。
+$0,1$ を交換する自己写像との可換性から、各 $A$ とその補集合のちょうど一方が属する。
+二つの特性関数の値の組を $\Omega$ に符号化し、座標射と論理積を
+$\Omega$ の自己写像として表すと、$A,B\in\mathscr U_\varphi$ なら
+$A\cap B\in\mathscr U_\varphi$ が従う。
+補集合の選択と交叉閉性から上方閉性も従う。
+
+任意の $f:X\to\Omega$ について $t=\varphi(f)$ と置く。
+$m_t:\Omega\to\Omega$ を $\{t\}$ の特性関数とすれば、
+\[
+ \varphi(\chi_{f^{-1}(t)})
+ =\varphi(m_t f)=m_t(\varphi(f))=1.
+\]
+従って $f^{-1}(t)\in\mathscr U_\varphi$ であり、どの可算分割にも
+$\mathscr U_\varphi$ に属するセルが存在する。
+これより $\mathscr U_\varphi$ は可算完備である。
+実際、$A_n\in\mathscr U_\varphi$ の交叉 $A$ が属さなければ、$A$ と
+「初めて $A_n$ から外れる点」の集合による可算分割のどのセルも属さず、矛盾する。
+
+補題\ref{lem:ultrafilter}と $\Naxiom$ より、$\mathscr U_\varphi$ はある $x\in X$ による
+主超フィルターである。上で選ばれたすべての fibre が $x$ を含むので、
+$\varphi(f)=f(x)$ が任意の $f$ に対して成り立つ。
+従って $\varphi=\ev_x$ であり、特性関数が点を分離するので $x$ は一意である。
+$X=\varnothing$ の場合は $F(X)=1$ かつ $H(1)=\varnothing$ なので結論は成立する。
+\end{proof}
+
+\begin{remark}\label{rem:topology}
+\eqref{eq:compactevaluation} は同相写像だが、\eqref{eq:isbell} は集合としての全単射である。
+実際、\eqref{eq:isbell} の同定の下で $H(F(X))$ は離散である。
+各 $x\in X$ に対し、座標 $\chi_{\{x\}}\in F(X)$ が一点集合 $\{\ev_x\}$ を開集合として検出するからである。
+従って、コンパクトな $X$ と $H(F(X))$ の位相を同一視してはならない。
+\end{remark}
+
+\section{任意の因子化先に対する濃度下界}\label{sec:bound}
+
+この節では $\Naxiom$ を仮定する。$X$ をコンパクト Hausdorff 零次元空間とし、
+$d:X\to X$ を任意の\emph{集合写像}とする。連続性は仮定しない。
+\begin{equation}\label{eq:Y}
+ Y_{X,d}=(C(X)\pairarrows{i_X}{d^*}F(X)),
+ \qquad d^*(f)=f\circ d
+\end{equation}
+と定める。$f\circ d$ が連続でなくても $F(X)$ の元ではあるので、$d^*$ は定義される。
+両構造射は後合成作用と可換であり、$Y_{X,d}$ は $\D$ の対象である。
+
+\begin{lemma}\label{lem:Ymembership}
+$Y_{X,d}\in\A$ である。また、評価による同定の下で $H(i_X)=\id_X$、$H(d^*)=d$ である。
+\end{lemma}
+\begin{proof}
+$C(X)$ は補題\ref{lem:compactevaluation}により有限支持である。
+同補題と命題\ref{prop:isbell}による全単射
+\[
+ X\xrightarrow{\eta_X}H(F(X))
+ \xrightarrow{H(i_X)}H(C(X))\xrightarrow{\epsilon_X^{-1}}X
+\]
+の合成は恒等写像である。従って $H(i_X)$ は全単射であり、
+命題\ref{prop:membership}を適用できる。
+さらに $\ev_x\circ d^*=\ev_{d(x)}$ なので $H(d^*)=d$ である。
+\end{proof}
+
+点 $x_0\in X$ を選ぶと、
+\begin{equation}\label{eq:psi}
+ \psi_{X,d,x_0}:Y_{X,d}\longrightarrow B,
+ \qquad (\psi_{X,d,x_0})_0=\ev_{x_0},\quad
+ (\psi_{X,d,x_0})_1=!
+\end{equation}
+が定まる。自然性は終対象への射の一意性から従う。
+
+\begin{theorem}[因子化下界]\label{thm:bound}
+$x_0$ を含み $d(F)\subseteq F$ を満たす閉部分集合 $F\subseteq X$ が
+$X$ 自身に限られるとする。
+任意の $Z\in\A$ を経由する因子化
+\begin{equation}\label{eq:factorization}
+ Y_{X,d}\xrightarrow{a}Z\xrightarrow{b}B,
+ \qquad ba=\psi_{X,d,x_0}
+\end{equation}
+に対し、連続全射 $H(Z_0)\to X$ が存在する。特に
+\begin{equation}\label{eq:bound}
+ |X|\le |H(Z_0)|\le\aleph_0^{|Z_0|}
+\end{equation}
+である。
+\end{theorem}
+\begin{proof}
+\[
+ T=H(Z_0),\quad S=H(Z_1),\quad
+ u=H(p_Z):S\to T,\quad v=H(q_Z):S\to T
+\]
+と置く。$Z\in\A$ より $u$ は全単射なので、集合写像 $k=vu^{-1}:T\to T$ が定まる。
+評価による同定を使い、
+\[
+ h=\epsilon_X^{-1}H(a_0):T\to X,\qquad
+ \ell=\eta_X^{-1}H(a_1):S\to X
+\]
+と置く。$a$ が図式の射であるという二式
+\[
+ p_Za_0=a_1i_X,\qquad q_Za_0=a_1d^*
+\]
+を $H$ で写し、補題\ref{lem:Ymembership}を用いると
+\begin{equation}\label{eq:dualcommutation}
+ hu=\ell,\qquad hv=d\ell
+\end{equation}
+を得る。従って $hk=dh$ であり、次の集合写像の図式が可換になる。
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+ T \arrow[r,"h"] \arrow[d,"k"'] & X \arrow[d,"d"]\\
+ T \arrow[r,"h"'] & X
+ \end{tikzcd}
+\]
+この等式から $d(h(T))\subseteq h(T)$ が従う。
+
+一方、$Z_0$ は有限支持なので、補題\ref{lem:compactH}により $T$ はコンパクトである。
+$H(a_0)$ は連続で $\epsilon_X$ は同相写像なので、$h$ は連続である。
+従って Hausdorff 空間 $X$ 内の像 $h(T)$ はコンパクト、特に閉集合である。
+ここでは $k$ や $d$ の連続性は使わない。
+
+$b_0:Z_0\to\Omega$ は $T$ の元であり、$b_0a_0=\ev_{x_0}$ より $h(b_0)=x_0$ である。
+従って $h(T)$ は $x_0$ を含む閉 $d$-不変部分集合であり、仮定から $h(T)=X$ となる。
+これで全射性が示された。最後の濃度評価は $H(Z_0)\subseteq\Omega^{Z_0}$ による。
+\end{proof}
+
+\subsection{順序数空間と後続操作}
+
+無限基数 $\kappa$ を始順序数とみなし、
+\[
+ X_\kappa=[0,\kappa]
+\]
+に順序位相を入れる。集合写像 $d_\kappa:X_\kappa\to X_\kappa$ を
+\begin{equation}\label{eq:successor}
+ d_\kappa(\alpha)=
+ \begin{cases}
+  \alpha+1,&\alpha<\kappa,\\
+  \kappa,&\alpha=\kappa
+ \end{cases}
+\end{equation}
+で定める。
+
+\begin{lemma}\label{lem:ordinal}
+$X_\kappa$ はコンパクト Hausdorff 零次元空間であり、$0$ を含む閉 $d_\kappa$-不変部分集合は
+$X_\kappa$ 自身に限られる。
+\end{lemma}
+\begin{proof}
+順序位相は Hausdorff である。コンパクト性は超限帰納法で確かめられる。
+開被覆を一つ固定すると、$[0,0]$ は有限個で被覆できる。
+$\alpha=\beta+1$ が後続順序数なら帰納法で $[0,\beta]$ を有限個で被覆し、
+$\alpha$ を含む一つの開集合を加えればよい。
+$\alpha>0$ が極限順序数なら、$\alpha$ を含む開集合はある $\beta<\alpha$ に対して
+$(\beta,\alpha]$ を含むので、$[0,\beta]$ に帰納法を使う。
+従って $[0,\kappa]$ も有限個で被覆できる。
+
+区間 $[0,\beta]$ および $(\alpha,\beta]$（$\alpha<\beta\le\kappa$）は clopen であり、
+これらから開基が得られる。従って $X_\kappa$ は零次元である。
+
+$F$ を $0$ を含む閉 $d_\kappa$-不変部分集合とする。
+$\alpha\in F$ を超限帰納法で示す。$0\in F$ は仮定であり、後続段は
+$d_\kappa$-不変性による。極限順序数 $\lambda\le\kappa$ で
+$[0,\lambda)\subseteq F$ なら、$\lambda$ は $[0,\lambda)$ の閉包に属するので、
+$F$ の閉性より $\lambda\in F$ である。従って $F=X_\kappa$ となる。
+\end{proof}
+
+\begin{proof}[定理\ref{thm:main}の証明]
+各無限基数 $\kappa$ に対し
+\[
+ Y_\kappa=Y_{X_\kappa,d_\kappa},\qquad
+ \psi_\kappa=\psi_{X_\kappa,d_\kappa,0}:Y_\kappa\to B
+\]
+と置く。補題\ref{lem:Ymembership}より $Y_\kappa\in\A$ である。
+
+任意の集合個の射 $\{b_i:Z_i\to B\}_{i\in I}$（$Z_i\in\A$）を取る。
+$I$ は集合なので、すべての $|H((Z_i)_0)|$ より大きい無限基数 $\kappa$ を選べる。
+もし $\psi_\kappa$ がいずれかの $b_i$ を経由すれば、
+補題\ref{lem:ordinal}と定理\ref{thm:bound}により
+\[
+ \kappa=|X_\kappa|\le |H((Z_i)_0)|<\kappa
+\]
+となり矛盾する。従ってこの集合は弱終集合ではない。
+ゆえに $\A\mathbin{\downarrow}B$ は弱終集合を持たず、特に余反射を持たない。
+$\D$ は局所可呈示圏で $\Sigma$ は二元集合なので、$\Pstmt$ は偽である。
+\end{proof}
+
+定理\ref{thm:bound}の $Z$ は任意の $\A$-対象である。このため、上の議論は
+候補 $Y_\kappa$ の濃度だけを比較するものではなく、固定した $\Sigma,B$ における
+解集合条件の失敗を直接示している。
+
+\section{集合論的帰結}\label{sec:consequences}
+
+\begin{corollary}\label{cor:measurable}
+$\mathrm{ZFC}+\Naxiom\vdash\neg\Pstmt$ である。
+従って $\Pstmt$ は非可算可測基数の存在を含意する。
+\end{corollary}
+\begin{proof}
+定理\ref{thm:main}とその対偶による。
+\end{proof}
+
+肯定側には、Vopěnka 原理 $\mathrm{VP}$ の下で $\Pstmt$ が成り立つという既知の結果を用いる。
+これは \cite[p.~295, Problem~1; Theorem~6.28]{AR94} に記されている。
+また、$\mathrm{ZFC}$ の無矛盾性から $\mathrm{ZFC}+V=L$ の無矛盾性が従い、
+$V=L$ の下では非可算可測基数は存在しない。
+後者の集合論的事実については \cite[\S9]{Shulman08} も参照されたい。
+
+\begin{corollary}[相対的独立性]\label{cor:independence}
+$\Con(\mathrm{ZFC}+\mathrm{VP})$ を仮定する。このとき、$\Pstmt$ の肯定側と否定側は
+いずれも $\mathrm{ZFC}$ と相対的に無矛盾である。従って $\Pstmt$ は $\mathrm{ZFC}$ から独立である。
+\end{corollary}
+\begin{proof}
+肯定側は既知の $\mathrm{VP}\Rightarrow\Pstmt$ による。
+否定側では、$\Con(\mathrm{ZFC})$ から
+$\Con(\mathrm{ZFC}+V=L)$、従って $\Con(\mathrm{ZFC}+\Naxiom)$ が得られる。
+定理\ref{thm:main}を適用すれば $\Con(\mathrm{ZFC}+\neg\Pstmt)$ が従う。
+\end{proof}
+
+上の否定側は、一つの固定した前層圏、一つの固定したテスト集合、および一つの固定標的に関する
+存在命題を否定している。特に、集合でコードされた \eqref{eq:fixeddata} に対して
+「$B$ が $\A$-余反射を持つ」という一階の集合論的命題だけを取り出しても、
+同じ相対的独立性の議論が適用できる。
+本稿は $\Pstmt$ と $\mathrm{VP}$ または Weak Vopěnka 原理との同値性や、
+正確な無矛盾性強度を主張しない。
+
+\appendix
+\renewcommand{\thetheorem}{\Alph{section}.\arabic{theorem}}
+\section{一意性クラスの非 well-poweredness}\label{app:mono}
+
+固定した $\Sigma$ に対し、一意性だけを要求する充満部分圏を
+\[
+ \Ical_\Sigma
+ =\{Z\in\D:\Hom_\D(Z,s)\text{ がすべての }s\in\Sigma\text{ について単射}\}
+\]
+とする。$\tau$ は mono なので、$\Hom_\D(Z,\tau)$ の単射性はすべての $Z$ について成立する。
+従って命題\ref{prop:membership}の Hom 計算から
+\begin{equation}\label{eq:I}
+ \Ical_\Sigma=\{Z:H(p_Z)\text{ が単射}\}
+\end{equation}
+である。有限支持条件は \eqref{eq:I} には含まれない。
+
+\begin{proposition}\label{prop:internalmono}
+$\Naxiom$ の下で、各 $\psi_\kappa:Y_\kappa\to B$ は $\Ical_\Sigma$ 内の mono である。
+従って $\Ical_\Sigma$ は well-powered でない。
+\end{proposition}
+\begin{proof}
+$H(1)=\varnothing$、$H(\Omega)=\{\id_\Omega\}$ である。
+後者は、$\Omega$ の任意の $M$-同変自己写像がすべての定値写像と可換であることから従う。
+従って $B\in\Ical_\Sigma$ である。また $Y_\kappa\in\A\subseteq\Ical_\Sigma$ である。
+
+$T\in\Ical_\Sigma$ と二射 $a,b:T\to Y_\kappa$ を取り、$\psi_\kappa a=\psi_\kappa b$ とする。
+以下、評価による同定を使い、$X=X_\kappa$、$d=d_\kappa$ と略記する。
+$H(a_0),H(b_0):X\to H(T_0)$ は連続であり、$0$ で一致する。
+$H(T_0)$ は Hausdorff なので、一致点の集合
+\[
+ E=\{x\in X:H(a_0)(x)=H(b_0)(x)\}
+\]
+は閉である。図式の可換性から
+\[
+ \begin{aligned}
+ H(a_0)&=H(p_T)H(a_1),& H(a_0)d&=H(q_T)H(a_1),\\
+ H(b_0)&=H(p_T)H(b_1),& H(b_0)d&=H(q_T)H(b_1)
+ \end{aligned}
+\]
+を得る。$H(p_T)$ は単射なので、$x\in E$ なら $H(a_1)(x)=H(b_1)(x)$ であり、
+従って $d(x)\in E$ となる。補題\ref{lem:ordinal}より $E=X$ である。
+
+再び $H(p_T)$ の単射性から $H(a_1)=H(b_1)$ を得る。
+$a_1,b_1$ は $F(X)$ への射なので、すべての点での評価との合成が一致することから $a_1=b_1$。
+同様に $C(X)$ の関数も点での評価によって区別されるので $a_0=b_0$ である。
+よって $\psi_\kappa$ は内部 mono である。
+
+始域の第1成分は $F(X_\kappa)=\Omega^{X_\kappa}$ であり、その濃度は
+$\kappa$ とともに非有界である。同じ内部部分対象を表す二つの mono の始域は同型なので、
+この族を集合個の内部部分対象で尽くすことはできない。従って $B$ は真のクラス個の
+内部部分対象を持ち、$\Ical_\Sigma$ は well-powered でない。
+\end{proof}
+
+この非 well-poweredness は定理\ref{thm:main}の証明には用いていない。
+主定理の根拠は、定理\ref{thm:bound}による任意の因子化先の濃度下界である。
+
+\section{有限支持条件の役割}\label{app:boundary}
+
+第一のテスト $\tau$ を除くと、上で作った順序数の族は一つの固定した対象を経由する。
+これを明示するため、$s:\omega\to\omega$ を $s(n)=n+1$ とし、
+\[
+ Z_*=(F(\omega)\pairarrows{\id}{s^*}F(\omega))
+\]
+と置く。$H(\id)$ は全単射なので $Z_*\perp\sigma$ である。
+$\ev_0$ と $!$ は射 $z_*:Z_*\to B$ を定める。
+
+任意の無限基数 $\kappa$ に対し、包含 $e_\kappa:\omega\hookrightarrow[0,\kappa]$ に沿う
+制限写像を二つの成分として取ると、射
+\[
+ r_\kappa:Y_\kappa\longrightarrow Z_*
+\]
+が得られる。第一の可換条件は包含との両立であり、第二の可換条件は
+$d_\kappa e_\kappa=e_\kappa s$ による。評価点 $0$ も保たれるので
+\[
+ z_*r_\kappa=\psi_\kappa
+\]
+である。
+
+一方、$Z_*$ の第0成分 $F(\omega)=\omega^\omega$ には恒等写像 $\id_\omega$ があるが、
+これは有限支持を持たない。任意の有限 $S\subseteq\omega$ に対して、$S$ 上で一致し
+$S$ の外で異なる二つの写像 $m,n$ を取れば、$m\cdot\id_\omega\ne n\cdot\id_\omega$ だからである。
+従って $Z_*\not\perp\tau$ である。
+
+この対照は、有限支持のテストが極限点の情報を失う因子化先を排除し、
+合格する因子化先の Hom 空間をコンパクトにする役割を持つことを示す。
+また、有限支持を $Z_1$ にも課せば $H(p_Z)$ はコンパクト空間から Hausdorff 空間への
+連続全単射、従って同相写像となる。その場合は $H(q_Z)H(p_Z)^{-1}$ も連続になる。
+本稿では有限支持を片側だけに課すことで、不連続な後続操作を用いている。
+
+\begin{thebibliography}{9}
+
+\bibitem{AR94}
+Ji\v r\'{\i} Ad\'{a}mek and Ji\v r\'{\i} Rosick\'{y},
+\emph{Locally Presentable and Accessible Categories},
+London Mathematical Society Lecture Note Series, vol.~189,
+Cambridge University Press, 1994.
+\href{https://doi.org/10.1017/CBO9780511600579}{doi:10.1017/CBO9780511600579}.
+本文では Problem~1（p.~295）と Theorem~6.28 を参照する。
+
+\bibitem{Isbell60}
+J.~R. Isbell,
+Adequate subcategories,
+\emph{Illinois Journal of Mathematics} \textbf{4} (1960), 541--552.
+\href{https://conceptualmathematics.wordpress.com/wp-content/uploads/2013/05/adequatesubcategories.pdf}{原論文 PDF}.
+本文で用いる評価表示は \S2.5（pp.~549--550）に対応する。
+
+\bibitem{Shulman08}
+Michael A. Shulman,
+\emph{Set theory for category theory},
+arXiv:0810.1279, 2008.
+\href{https://arxiv.org/abs/0810.1279}{arXiv:0810.1279}.
+本文では \S9、特に $\Set^{\op}$ の $M$-集合への埋め込みの記述（p.~20）を参照する。
+
+\end{thebibliography}
+\end{document}
